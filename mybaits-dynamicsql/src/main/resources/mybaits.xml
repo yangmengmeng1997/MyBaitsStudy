@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <!--指定数据库标志文件,数据库配置文件和mybaits配置文件剥离开来-->
+    <properties resource="jdbc.properties" />
+
+    <settings>
+        <!--设置mybaits的输出日志，加入日志文件进行调试作用-->
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <!--设置别名映射条件,自定义别名映射-->
+    <!--第二种特别好用，解决了数据库只能小写和实体类不能大小的映射问题。牛的，类名即为别名-->
+    <typeAliases>
+<!--        <typeAlias type="org.example.enity.student" alias="stuRename"></typeAlias>-->
+        <package name="org.example.enity"/>
+    </typeAliases>
+
+
+
+    <environments default="mydev">
+        <environment id="mydev">
+            <transactionManager type="JDBC"/>
+            <dataSource type="POOLED">
+                <property name="driver" value="${jdbc.driver}"/>
+                <property name="url" value="${jdbc.url}"/>
+                <property name="username" value="${jdbc.user}"/>
+                <property name="password" value="${jdbc.password}"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--添加相关的映射文件,如果指定多个呢-->
+<!--        <mapper resource="org/example/dao/StudentDao.xml"/>-->
+        <!--一次加载所有的包下的xml文件，但是xml和接口名字一样并且在同一目录下-->
+        <package name="org.example.dao"/>
+    </mappers>
+</configuration>
