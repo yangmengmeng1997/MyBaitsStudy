@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/../MyFristWeb/MyFristWeb.iml" filepath="$PROJECT_DIR$/../MyFristWeb/MyFristWeb.iml" />
+      <module fileurl="file://$PROJECT_DIR$/course-ajax.iml" filepath="$PROJECT_DIR$/course-ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../course-local-ajax/course-local-ajax.iml" filepath="$PROJECT_DIR$/../course-local-ajax/course-local-ajax.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../queryinfo/queryinfo.iml" filepath="$PROJECT_DIR$/../queryinfo/queryinfo.iml" />
+    </modules>
+  </component>
+</project>
