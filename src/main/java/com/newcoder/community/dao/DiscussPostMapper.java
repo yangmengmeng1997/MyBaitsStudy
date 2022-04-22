@@ -18,7 +18,4 @@ public interface DiscussPostMapper {
 
     //参数起别名，动态SQL中如果只有一个参数会报错，所以必须起别名 , 统计评论总数
     int selectDiscussPostRows(@Param("userId") int userId);
-
-
-
 }
