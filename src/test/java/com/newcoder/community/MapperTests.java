@@ -1,8 +1,10 @@
 package com.newcoder.community;
 
 import com.newcoder.community.dao.DiscussPostMapper;
+import com.newcoder.community.dao.LoginTicketMapper;
 import com.newcoder.community.dao.UserMapper;
 import com.newcoder.community.entity.DiscussPost;
+import com.newcoder.community.entity.LoginTicket;
 import com.newcoder.community.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeansException;
@@ -28,6 +30,9 @@ public class MapperTests{
 
     @Autowired(required = false)
     private DiscussPostMapper discussPostMapper;
+
+    @Autowired(required = false)
+    private LoginTicketMapper loginTicketMapper;
 
     @Test
     public void testSelectUser(){
@@ -66,4 +71,20 @@ public class MapperTests{
            int rows = discussPostMapper.selectDiscussPostRows(149);
            System.out.println(rows);
     }
+
+    @Test
+    public void testLoginTicketMapper(){
+//        LoginTicket loginTicket =  new LoginTicket();
+//        loginTicket.setUserId(101);
+//        loginTicket.setTicket("asgafdhdsgf");
+//        loginTicket.setStatus(1);
+//        loginTicket.setExpired(new Date(System.currentTimeMillis()+1000*60*10));
+//        int row = loginTicketMapper.insertLogin(loginTicket);
+//        System.out.println(row);
+        LoginTicket loginTicket = loginTicketMapper.selectByTicket("asgafdhdsgf");
+        System.out.println(loginTicket);
+        int rows = loginTicketMapper.updateStatus("asgafdhdsgf",0);
+        System.out.println(rows);
+    }
+
 }

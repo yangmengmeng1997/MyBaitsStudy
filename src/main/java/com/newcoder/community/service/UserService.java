@@ -1,7 +1,9 @@
 package com.newcoder.community.service;
 
 import com.newcoder.community.CommunityApplication;
+import com.newcoder.community.dao.LoginTicketMapper;
 import com.newcoder.community.dao.UserMapper;
+import com.newcoder.community.entity.LoginTicket;
 import com.newcoder.community.entity.User;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
@@ -38,6 +40,11 @@ public class UserService implements CommunityConstant {
 
     @Value("${server.servlet.context-path}")
     private String contextPath;
+
+    //*****************************************登录相关*****************
+    @Autowired(required = false)
+    private LoginTicketMapper loginTicketMapper;
+    //*****************************************************************
 
     public User findUserById(int id){
         return userMapper.selectById(id);
@@ -138,5 +145,80 @@ public class UserService implements CommunityConstant {
         }else{
             return ACTIVATION_FAILURE;
         }
+    }
+
+    /*
+       登录功能的实现 ，有多种情况，类似于注册，封装登录成功与否的消息
+       参数： 用户名，用户密码，还有过期时间（秒）
+     */
+    public  Map<String,Object> login(String username, String password , int expired){
+        Map<String,Object> loginInfo = new HashMap<>();
+        //空值处理
+        if (StringUtils.isBlank(username)) {
+            loginInfo.put("usernameMsg","账号为空");
+            return loginInfo;
+        }
+        if(StringUtils.isBlank(password)){
+            loginInfo.put("passwordMsg","密码为空");
+            return loginInfo;
+        }
+        //验证账号是否存在
+        User user = userMapper.selectByName(username);
+        if(user==null){
+            loginInfo.put("usernameMsg","登录的账号不存在，请先注册");
+            return loginInfo;
+        }
+
+        //账号没有激活也不能登录
+        if(user.getStatus()==0){
+            loginInfo.put("usernameMsg","该账号未激活，请先激活");
+            return loginInfo;
+        }
+
+        //验证密码
+        if(!user.getPassword().equals(CommunityUtil.md5(password)+user.getSalt())){
+            loginInfo.put("passwordMsg","输入的密码错误!");
+            return loginInfo;
+        }
+        //账号密码都存在且正确,生成登录凭证
+        LoginTicket loginTicket = new LoginTicket();
+        loginTicket.setUserId(user.getId());
+        loginTicket.setTicket(CommunityUtil.generatedUUId());  //生成随机字符串
+        loginTicket.setStatus(0);  //0 表示登录有效
+        loginTicket.setExpired(new Date(System.currentTimeMillis()+expired*1000));
+        loginTicketMapper.insertLogin(loginTicket);  //存储登录凭证
+        loginInfo.put("ticket",loginTicket.getTicket());  // 存储ticket类似于这个session
+        return loginInfo;
+    }
+
+    /*
+       根据ticket，也就是登录凭证将状态设置为1即可
+     */
+    public void logout(String ticket){
+        loginTicketMapper.updateStatus(ticket,1);
+    }
+
+    /*
+       查询登录凭证
+       根据登录凭证查询到登录用户的信息
+     */
+    public LoginTicket FindLoginTicket(String ticket){
+        return loginTicketMapper.selectByTicket(ticket);
+    }
+
+
+    /*
+       修改图像路劲辅助完成换头像的功能
+     */
+    public int updateHeader(int userId,String headerUrl){
+        return userMapper.updateHeader(userId,headerUrl);
+    }
+
+    /*
+       修改当前用户的密码,
+       这边获取view的内容，转到controller处理
+     */
+    public int updatePassword(int userId,String password){
+        return userMapper.updatePassword(userId,password);
     }
 }
