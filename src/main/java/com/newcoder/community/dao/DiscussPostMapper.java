@@ -9,6 +9,7 @@ import java.util.List;
 /**
  * @author xiuxiaoran
  * @date 2022/4/20 21:33
+ * 对应讨论帖数据的dao数据库操作
  */
 @Mapper
 public interface DiscussPostMapper {
@@ -18,4 +19,13 @@ public interface DiscussPostMapper {
 
     //参数起别名，动态SQL中如果只有一个参数会报错，所以必须起别名 , 统计评论总数
     int selectDiscussPostRows(@Param("userId") int userId);
+
+    //插入数据
+    int insertDiscussPost(DiscussPost discussPost);
+
+    //显示数据
+    DiscussPost selectDiscussPostById(int id);
+
+    //更新评论的总数量
+    int updateCommentCount(int id,int commentCount);
 }

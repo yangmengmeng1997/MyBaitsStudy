@@ -1,9 +1,12 @@
 package com.newcoder.community.util;
 
+import com.alibaba.fastjson.JSONObject;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.DigestUtils;
 
 import javax.lang.model.element.NestingKind;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -21,5 +24,39 @@ public class CommunityUtil {
             return null ;
         }
         return DigestUtils.md5DigestAsHex(key.getBytes());  //哪里用到了salt了
+    }
+
+    //Json相关的数据处理方法
+    /*
+       返回值：Json格式的字符串
+       code: 编码
+       msg:  提示信息
+       map： 封装
+
+     */
+    public static String getJSONString(int code, String msg, Map<String,Object> map){
+        JSONObject jsonObject = new JSONObject();
+        jsonObject.put("code",code);
+        jsonObject.put("msg",msg);
+        if(map!=null){
+            for(String key:map.keySet()){
+                jsonObject.put(key,map.get(key));
+            }
+        }
+        //JSON封装了之后的所有数据   ，返回Json数据处理的字符串
+        return jsonObject.toJSONString();
+    }
+
+    public static String getJSONString(int code,String msg){
+        return getJSONString(code,msg,null);
+    }
+    public static String getJSONString(int code){
+        return getJSONString(code,null);
+    }
+    public static void main(String[] args){
+        Map<String , Object> map = new HashMap<>();
+        map.put("name","zhangsan");
+        map.put("age",25);
+        System.out.println(getJSONString(0));
     }
 }

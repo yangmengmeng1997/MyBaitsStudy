@@ -31,9 +31,9 @@ public class LoginTicketInterceptor implements HandlerInterceptor{
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         //从浏览器中获取cookie
-        String ticket = CookieUtil.getValue(request,"ticket");   //这里写死了吗
+        String ticket = CookieUtil.getValue(request,"ticket");
         if(ticket!=null){  //表示登录了
-            //查询凭证
+            //根据ticket的值找到登录信息，通过完整的登录信息就可以找到user来传递信息了
             LoginTicket loginTicket = userService.FindLoginTicket(ticket);
             //判断凭证有没有失效
             //登录状态有没有效，并且保持登录的最长有效时长有没有结束

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.newcoder.community.dao.MessageMapper">
+    <sql id="selectAllFileds">
+        <if test="true">
+            id, from_id, to_id, conversation_id, content, status, create_time
+        </if>
+    </sql>
+
+    <sql id="insertFileds">
+        <if test="true">
+            from_id, to_id, conversation_id, content, status, create_time
+        </if>
+    </sql>
+
+    <select id="selectConversations" resultType="Message">
+    <!--
+      子查询里面的是查询每一个会话的最大id，因为消息是id递增的，所以id最大就是最新数据
+      因为不管是发送的还是接收的，只要两者这件的通信都属于同一个会话，我们在每一个会话中
+      选择最新的消息id作为子查询的集合，然后外层查询完整的信息即可
+    -->
+         select <include refid="selectAllFileds"/>
+         from message
+         where id in
+           (select max(id)
+           from message
+           where status!=2 and from_id!=1
+           and (from_id=#{userId} or to_id=#{userId})
+           group by conversation_id)
+         order by id DESC
+         limit #{offset},#{limit}
+    </select>
+
+    <!--
+      子查询里面的是查询每一个会话的最大id，那么只要查找出一共有少个这样的最大值就可以知道
+      一共有多少条会话了。
+      status=2 表示的是废弃的,0表示未读
+      from_id=1 表示的是系统通知
+      都要过滤掉，下面也一样
+    -->
+    <select id="selectConversationCount" resultType="int">
+        select count(m.maxid) from(
+                   select max(id) as maxid
+                   from message
+                   where status!=2 and from_id!=1
+                   and (from_id=#{userId} or to_id=#{userId})
+                   group by conversation_id
+                 ) as m
+    </select>
+
+
+    <select id="selectLetters" resultType="Message">
+        select <include refid="selectAllFileds"/>
+        from message
+        where conversation_id = #{conversationId}
+              and status!=2 and from_id!=1
+        order by id DESC
+        limit #{offset},#{limit}
+    </select>
+
+    <select id="selectLetterCount" resultType="int">
+        select count(id)
+        from message
+        where conversation_id=#{conversationId}
+              and status!=2 and from_id!=1
+    </select>
+
+    <!--
+        conversation_id 不一定存在，参数不一定可以传递进来，需要动态拼接,不要使用select*
+        不看清楚视频就是出错
+    -->
+    <select id="selectLetterUnreadCount" resultType="int">
+        select count(id)
+        from message
+        where to_id=#{userId} and status=0 and from_id!=1
+               <if test="conversationId!=null">
+                     and conversation_id=#{conversationId}
+               </if>
+    </select>
+
+    <insert id="insertMessage" parameterType="Message" keyProperty="id">
+            insert into message(<include refid="insertFileds"/>)
+            values(#{fromId},#{toId},#{conversationId},#{content},#{status},#{createTime})
+    </insert>
+
+    <update id="updateStatus">
+        update message
+        set status = #{status}
+        where id in
+        <foreach collection="ids" item="id" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </update>
+
+
+</mapper>

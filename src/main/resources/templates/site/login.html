@@ -60,8 +60,10 @@
 		</header>
 
 		<!-- 内容 注意表单参数的name属性必须要和Controller中的形参名字一样才可以自动注入值
-		就是在controller中你传入的参数不是一个对象，如果是对象就可以框架帮你存入model中，
-		不是的话就存在request域中
+		就是在controller中你传入的参数不是一个对象，那么model不会自己装入这些值，可以手动mdoel.addZAtrribute() 来装入，太麻烦了。
+		如果是对象就可以框架帮你存入model中，那就可以在这页面里直接使用了
+		不是的话就存在request域中，那么就需要使用param.xxx 的方法进行获取了
+		th:value="${param.username}" 相当于request.getParameter("username")
 		-->
 		<div class="main">
 			<div class="container pl-5 pr-5 pt-3 pb-3 mt-3 mb-3">

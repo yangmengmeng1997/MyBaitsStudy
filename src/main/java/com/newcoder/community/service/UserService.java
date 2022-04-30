@@ -50,6 +50,10 @@ public class UserService implements CommunityConstant {
         return userMapper.selectById(id);
     }
 
+    public User findUserByName(String name){
+        return userMapper.selectByName(name);
+    }
+
     //用户注册功能，包含邮箱发送信息调用
     /*
        注册逻辑核心代码功能
@@ -175,7 +179,14 @@ public class UserService implements CommunityConstant {
             return loginInfo;
         }
 
-        //验证密码
+
+        //验证密码，注意数据库存储的面试加密过后的密码，所以我们也需要进行加密之后再比
+        if(!user.getPassword().equals(CommunityUtil.md5(password)+user.getSalt())){
+            loginInfo.put("passwordMsg","输入的密码错误!");
+            return loginInfo;
+        }
+
+
         if(!user.getPassword().equals(CommunityUtil.md5(password)+user.getSalt())){
             loginInfo.put("passwordMsg","输入的密码错误!");
             return loginInfo;
@@ -186,9 +197,9 @@ public class UserService implements CommunityConstant {
         loginTicket.setTicket(CommunityUtil.generatedUUId());  //生成随机字符串
         loginTicket.setStatus(0);  //0 表示登录有效
         loginTicket.setExpired(new Date(System.currentTimeMillis()+expired*1000));
-        loginTicketMapper.insertLogin(loginTicket);  //存储登录凭证
-        loginInfo.put("ticket",loginTicket.getTicket());  // 存储ticket类似于这个session
-        return loginInfo;
+        loginTicketMapper.insertLogin(loginTicket);  //存储登录凭证在数据库中
+        loginInfo.put("ticket",loginTicket.getTicket());  // 存储ticket类似于这个session，之后将这个作为相应值发送给客户端
+        return loginInfo;   //返回key-value
     }
 
     /*

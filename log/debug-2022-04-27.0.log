@@ -1,0 +1,647 @@
+2022-04-27 15:37:29.756 [main] DEBUG com.newcoder.community.SensitiveTest - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 15:42:20.818 [main] DEBUG com.newcoder.community.SensitiveTest - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 15:43:17.718 [main] DEBUG com.newcoder.community.SensitiveTest - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 15:43:48.738 [main] DEBUG com.newcoder.community.SensitiveTest - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 15:45:57.561 [main] DEBUG com.newcoder.community.SensitiveTest - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 20:57:13.852 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 20:57:24.059 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 20:57:24.076 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 20:57:24.209 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 20:57:24.214 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 20:57:24.214 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 20:57:24.326 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 20:57:24.327 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.327 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 20:57:24.450 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.450 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.450 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 20:57:24.451 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.452 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.452 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 20:57:24.453 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.453 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.453 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 20:57:24.454 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.454 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.455 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 20:57:24.455 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.456 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.456 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 20:57:24.457 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.457 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.457 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 20:57:24.458 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.459 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.459 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 20:57:24.460 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.460 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.460 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 20:57:24.461 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:57:24.461 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 20:57:24.461 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 20:57:24.462 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 20:59:34.748 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 21:56:34.253 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 21:56:58.567 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 21:56:58.586 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 21:56:58.628 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 21:56:58.633 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 21:56:58.634 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 21:56:58.640 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 21:56:58.641 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.641 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 21:56:58.643 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.644 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.644 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 21:56:58.645 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.646 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.646 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 21:56:58.647 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.648 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.648 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 21:56:58.649 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.649 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.649 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 21:56:58.650 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.651 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.651 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 21:56:58.652 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.653 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.653 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 21:56:58.655 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.656 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.656 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 21:56:58.657 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.657 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.658 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 21:56:58.658 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:56:58.659 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:56:58.659 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 21:56:58.660 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:58:58.259 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 21:59:05.160 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 21:59:05.175 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 21:59:05.205 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 21:59:05.210 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 21:59:05.210 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 21:59:05.217 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 21:59:05.218 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.218 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 21:59:05.235 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.236 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.236 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 21:59:05.271 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.272 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.272 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 21:59:05.273 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.273 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.274 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 21:59:05.275 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.275 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.275 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 21:59:05.276 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.277 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.277 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 21:59:05.278 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.279 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.280 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 21:59:05.281 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.281 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.281 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 21:59:05.282 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.283 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.283 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 21:59:05.284 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 21:59:05.284 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 21:59:05.284 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 21:59:05.285 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:31.722 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:00:37.110 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:00:37.126 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:00:37.176 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:00:37.180 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:00:37.181 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:00:37.188 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:00:37.189 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.190 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:00:37.199 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.199 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.199 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:00:37.201 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.201 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.202 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:00:37.209 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.209 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.209 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:00:37.210 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.211 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.211 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:00:37.212 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.212 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.212 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:00:37.213 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.214 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.214 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:00:37.216 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.216 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.216 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:00:37.218 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.219 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.219 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:00:37.221 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:37.222 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:00:37.223 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 22:00:37.224 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:00:51.894 [http-nio-8080-exec-5] DEBUG c.n.c.controller.interceptor.AlphaInterceptor - preHandle com.newcoder.community.controller.LoginController#getLoginPage()
+2022-04-27 22:00:51.894 [http-nio-8080-exec-5] DEBUG c.n.c.controller.interceptor.AlphaInterceptor - postHandle com.newcoder.community.controller.LoginController#getLoginPage()
+2022-04-27 22:00:51.925 [http-nio-8080-exec-5] DEBUG c.n.c.controller.interceptor.AlphaInterceptor - afterCompletion com.newcoder.community.controller.LoginController#getLoginPage()
+2022-04-27 22:01:02.419 [http-nio-8080-exec-10] DEBUG c.n.c.controller.interceptor.AlphaInterceptor - preHandle com.newcoder.community.controller.LoginController#login(String, String, String, boolean, Model, HttpSession, HttpServletResponse)
+2022-04-27 22:01:02.425 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectByName - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where username = ? 
+2022-04-27 22:01:02.425 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectByName - ==> Parameters: ymm(String)
+2022-04-27 22:01:02.434 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectByName - <==      Total: 1
+2022-04-27 22:01:02.436 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.insertLogin - ==>  Preparing: insert into login_ticket(user_id,ticket,status,expired) values(?,?,?,?) 
+2022-04-27 22:01:02.438 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.insertLogin - ==> Parameters: 168(Integer), 7c274c51-4b45-4cd9-be99-f853aecc6099(String), 0(Integer), 2022-04-28 10:01:02.436(Timestamp)
+2022-04-27 22:01:02.609 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.insertLogin - <==    Updates: 1
+2022-04-27 22:01:02.612 [http-nio-8080-exec-10] DEBUG c.n.c.controller.interceptor.AlphaInterceptor - postHandle com.newcoder.community.controller.LoginController#login(String, String, String, boolean, Model, HttpSession, HttpServletResponse)
+2022-04-27 22:01:02.615 [http-nio-8080-exec-10] DEBUG c.n.c.controller.interceptor.AlphaInterceptor - afterCompletion com.newcoder.community.controller.LoginController#login(String, String, String, boolean, Model, HttpSession, HttpServletResponse)
+2022-04-27 22:01:02.621 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:01:02.621 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:01:02.622 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:01:02.623 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.623 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:01:02.625 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.626 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:01:02.626 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:01:02.628 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:01:02.629 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:01:02.630 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:01:02.634 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:01:02.635 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.636 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:01:02.637 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.639 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.639 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:01:02.641 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.642 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.643 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:01:02.643 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.644 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.644 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:01:02.646 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.646 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.646 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:01:02.647 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.648 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.648 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:01:02.648 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.649 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.649 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:01:02.650 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.650 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.650 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:01:02.651 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.651 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.652 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:01:02.653 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:02.654 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:02.654 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 22:01:02.656 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:24.274 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:01:24.274 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:01:24.275 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:01:24.275 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:24.275 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:01:24.276 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:24.279 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==>  Preparing: insert into `discuss_post` user_id,title,content,type,status,create_time,comment_count,score values (?,?,?,?,?,?,?,?); 
+2022-04-27 22:01:24.280 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==> Parameters: 168(Integer), aaa(String), 啊啊啊啊(String), 0(Integer), 0(Integer), 2022-04-27 22:01:24.277(Timestamp), 0(Integer), 0(Integer)
+2022-04-27 22:01:24.370 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:01:24.370 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:01:24.371 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:01:24.371 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:24.372 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:01:24.372 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:36.086 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:01:36.086 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:01:36.088 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:01:36.088 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:36.088 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:01:36.089 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:01:36.090 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==>  Preparing: insert into `discuss_post` user_id,title,content,type,status,create_time,comment_count,score values (?,?,?,?,?,?,?,?); 
+2022-04-27 22:01:36.090 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==> Parameters: 168(Integer), aaa(String), 啊啊啊啊(String), 0(Integer), 0(Integer), 2022-04-27 22:01:36.09(Timestamp), 0(Integer), 0(Integer)
+2022-04-27 22:01:36.098 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:01:36.098 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:01:36.099 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:01:36.100 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:01:36.100 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:01:36.100 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:40.216 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:14:45.243 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:14:45.259 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:14:45.287 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:14:45.297 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.298 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:14:45.299 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.315 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:14:45.315 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:14:45.316 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:14:45.317 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:14:45.317 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:14:45.345 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:14:45.346 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.347 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:14:45.361 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.361 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.361 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:14:45.362 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.363 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.363 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:14:45.365 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.366 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.366 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:14:45.375 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.376 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.376 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:14:45.377 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.378 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.378 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:14:45.379 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.379 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.380 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:14:45.382 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.383 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.383 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:14:45.385 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.386 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.387 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:14:45.388 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:45.389 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:45.389 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 22:14:45.390 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:53.113 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:14:53.114 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:14:53.115 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:14:53.116 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:53.117 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:14:53.118 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:14:53.124 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==>  Preparing: insert into `discuss_post` user_id,title,content,type,status,create_time,comment_count,score values (?,?,?,?,?,?,?,?); 
+2022-04-27 22:14:53.126 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==> Parameters: 168(Integer), aaa(String), 起啊啊啊(String), 0(Integer), 0(Integer), 2022-04-27 22:14:53.12(Timestamp), 0(Integer), 0(Integer)
+2022-04-27 22:14:53.177 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:14:53.177 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:14:53.178 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:14:53.179 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:14:53.179 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:14:53.180 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:01.859 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:15:08.813 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:15:08.831 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:15:08.865 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:15:08.878 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.879 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:15:08.889 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.907 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:15:08.907 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:15:08.930 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:15:08.931 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:15:08.932 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:15:08.939 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:15:08.940 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.941 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:15:08.942 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.942 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.942 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:15:08.943 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.944 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.944 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:15:08.945 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.946 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.946 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:15:08.977 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.978 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.978 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:15:08.979 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.980 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.980 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:15:08.981 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.982 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.982 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:15:08.983 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.983 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.983 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:15:08.984 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.984 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.985 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:15:08.985 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:08.986 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:08.986 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 22:15:08.987 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:24.907 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:15:24.907 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:15:24.908 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:15:24.908 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:15:24.909 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:15:24.910 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:15:59.312 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==>  Preparing: insert into `discuss_post` user_id,title,content,type,status,create_time,comment_count,score values (?,?,?,?,?,?,?,?); 
+2022-04-27 22:15:59.329 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==> Parameters: 168(Integer), aaa(String), 啊啊啊啊啊(String), 0(Integer), 0(Integer), 2022-04-27 22:15:53.687(Timestamp), 0(Integer), 0(Integer)
+2022-04-27 22:16:22.862 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:16:22.863 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:16:22.863 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:16:22.864 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:22.864 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:16:22.865 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:35.907 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:16:43.358 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:16:43.374 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:16:43.434 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:16:43.446 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.446 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:16:43.456 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.471 [http-nio-8080-exec-2] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:16:43.472 [http-nio-8080-exec-2] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:16:43.473 [http-nio-8080-exec-2] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:16:43.474 [http-nio-8080-exec-2] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:16:43.474 [http-nio-8080-exec-2] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:16:43.487 [http-nio-8080-exec-2] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:16:43.488 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.488 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:16:43.490 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.491 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.491 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:16:43.492 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.492 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.492 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:16:43.493 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.494 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.494 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:16:43.495 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.495 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.495 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:16:43.496 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.497 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.497 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:16:43.498 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.498 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.498 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:16:43.499 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.500 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.501 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:16:43.501 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.502 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.502 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:16:43.503 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:43.503 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:43.503 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 22:16:43.504 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:16:50.951 [http-nio-8080-exec-9] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:16:50.951 [http-nio-8080-exec-9] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:16:50.952 [http-nio-8080-exec-9] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:16:50.953 [http-nio-8080-exec-9] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:16:50.953 [http-nio-8080-exec-9] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:16:50.955 [http-nio-8080-exec-9] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:18:27.924 [http-nio-8080-exec-9] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==>  Preparing: insert into `discuss_post` user_id,title,content,type,status,create_time,comment_count,score values (?,?,?,?,?,?,?,?); 
+2022-04-27 22:18:27.941 [http-nio-8080-exec-9] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==> Parameters: 168(Integer), aaa(String), AAS2(String), 0(Integer), 0(Integer), 2022-04-27 22:16:56.518(Timestamp), 0(Integer), 0(Integer)
+2022-04-27 22:18:42.338 [http-nio-8080-exec-9] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:18:42.338 [http-nio-8080-exec-9] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:18:42.339 [http-nio-8080-exec-9] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:18:42.340 [http-nio-8080-exec-9] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:18:42.340 [http-nio-8080-exec-9] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:18:42.341 [http-nio-8080-exec-9] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:19:58.534 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:20:06.813 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:20:06.828 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:20:06.841 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:20:06.852 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.853 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:20:06.854 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.866 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:20:06.867 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:20:06.868 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:20:06.868 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:20:06.868 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:20:06.873 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:20:06.873 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.874 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:20:06.876 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.876 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.877 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:20:06.878 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.878 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.878 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:20:06.879 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.879 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.880 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:20:06.881 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.881 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.881 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:20:06.882 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.883 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.883 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:20:06.884 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.884 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.884 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:20:06.885 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.885 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.886 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:20:06.886 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.887 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.887 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:20:06.888 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:06.888 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:06.888 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 103(Integer)
+2022-04-27 22:20:06.889 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:13.616 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:20:13.617 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:20:13.618 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:20:13.618 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:13.619 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:20:13.620 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:13.625 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==>  Preparing: insert into discuss_post ( user_id,title,content,type,status,create_time,comment_count,score ) values (?,?,?,?,?,?,?,?); 
+2022-04-27 22:20:13.629 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - ==> Parameters: 168(Integer), aaa(String), 啊啊啊啊(String), 0(Integer), 0(Integer), 2022-04-27 22:20:13.621(Timestamp), 0(Integer), 0(Integer)
+2022-04-27 22:20:13.735 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.insertDiscussPost - <==    Updates: 1
+2022-04-27 22:20:15.786 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:20:15.786 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:20:15.787 [http-nio-8080-exec-7] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:20:15.788 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.788 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:20:15.789 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.790 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:20:15.790 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:20:15.791 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:20:15.792 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:20:15.792 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:20:15.797 [http-nio-8080-exec-7] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:20:15.798 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.799 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:20:15.799 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.800 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.800 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:20:15.801 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.801 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.801 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:20:15.804 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.804 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.805 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:20:15.806 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.807 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.807 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:20:15.808 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.809 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.810 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:20:15.811 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.812 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.812 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:20:15.813 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.814 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.814 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:20:15.815 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.815 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.815 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:20:15.816 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:20:15.816 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:20:15.817 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:20:15.817 [http-nio-8080-exec-7] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:40.287 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:56:50.224 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:56:50.241 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:56:50.264 [http-nio-8080-exec-1] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:56:50.277 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.277 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:56:50.279 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.294 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:56:50.295 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:56:50.296 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:56:50.296 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:56:50.297 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:56:50.302 [http-nio-8080-exec-1] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:56:50.304 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.304 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:56:50.305 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.306 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.306 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:56:50.309 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.310 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.310 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:56:50.311 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.312 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.312 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:56:50.313 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.314 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.314 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:56:50.316 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.317 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.317 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:56:50.318 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.319 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.319 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:56:50.320 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.320 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.320 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:56:50.321 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.322 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.322 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:56:50.323 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:50.325 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:50.325 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:56:50.326 [http-nio-8080-exec-1] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:55.649 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:56:55.649 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:56:55.650 [http-nio-8080-exec-6] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:56:55.650 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:55.650 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:56:55.652 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:55.653 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostById - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where id=? 
+2022-04-27 22:56:55.654 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostById - ==> Parameters: 281(Integer)
+2022-04-27 22:56:55.656 [http-nio-8080-exec-6] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostById - <==      Total: 1
+2022-04-27 22:56:55.656 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:55.656 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:56:55.673 [http-nio-8080-exec-6] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:55.761 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:56:55.761 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:56:55.763 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:56:55.763 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:55.764 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:56:55.765 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:56:55.773 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:56:55.774 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:56:55.775 [http-nio-8080-exec-10] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:56:55.775 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:56:55.775 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:56:55.776 [http-nio-8080-exec-10] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:57:03.718 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:57:03.719 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:57:03.720 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:57:03.720 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:57:03.720 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:57:03.723 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:57:03.725 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:57:03.725 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:57:03.726 [http-nio-8080-exec-2] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:57:03.726 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:57:03.726 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:57:03.727 [http-nio-8080-exec-2] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:05.326 [restartedMain] DEBUG com.newcoder.community.CommunityApplication - Running with Spring Boot v2.6.6, Spring v5.3.18
+2022-04-27 22:59:11.692 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:59:11.710 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:59:11.724 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:59:11.736 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.736 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:59:11.738 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.753 [http-nio-8080-exec-4] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==>  Preparing: select count(id) from discuss_post where status!=2 
+2022-04-27 22:59:11.754 [http-nio-8080-exec-4] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - ==> Parameters: 
+2022-04-27 22:59:11.755 [http-nio-8080-exec-4] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostRows - <==      Total: 1
+2022-04-27 22:59:11.755 [http-nio-8080-exec-4] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where status!=2 order by type DESC , create_time DESC limit ? , ? 
+2022-04-27 22:59:11.755 [http-nio-8080-exec-4] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - ==> Parameters: 0(Integer), 10(Integer)
+2022-04-27 22:59:11.760 [http-nio-8080-exec-4] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPosts - <==      Total: 10
+2022-04-27 22:59:11.761 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.762 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 11(Integer)
+2022-04-27 22:59:11.763 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.763 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.764 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 111(Integer)
+2022-04-27 22:59:11.765 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.766 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.766 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:59:11.767 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.768 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.768 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:59:11.769 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.769 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.770 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:59:11.770 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.771 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.771 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 149(Integer)
+2022-04-27 22:59:11.772 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.772 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.772 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 146(Integer)
+2022-04-27 22:59:11.773 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.773 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.774 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 145(Integer)
+2022-04-27 22:59:11.774 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.775 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.775 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:59:11.776 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:11.776 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:11.776 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 138(Integer)
+2022-04-27 22:59:11.777 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:13.512 [http-nio-8080-exec-8] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:59:13.513 [http-nio-8080-exec-8] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:59:13.514 [http-nio-8080-exec-8] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:59:13.515 [http-nio-8080-exec-8] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:13.515 [http-nio-8080-exec-8] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:59:13.517 [http-nio-8080-exec-8] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:13.519 [http-nio-8080-exec-8] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostById - ==>  Preparing: select id,user_id,title,content,type,status,create_time,comment_count,score from discuss_post where id=? 
+2022-04-27 22:59:13.519 [http-nio-8080-exec-8] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostById - ==> Parameters: 281(Integer)
+2022-04-27 22:59:13.520 [http-nio-8080-exec-8] DEBUG c.n.c.dao.DiscussPostMapper.selectDiscussPostById - <==      Total: 1
+2022-04-27 22:59:13.520 [http-nio-8080-exec-8] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:13.521 [http-nio-8080-exec-8] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:59:13.521 [http-nio-8080-exec-8] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:15.057 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:59:15.057 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:59:15.058 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:59:15.059 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:15.059 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:59:15.060 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1
+2022-04-27 22:59:15.067 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==>  Preparing: select id,user_id,ticket,status,expired from `login_ticket` where ticket=? 
+2022-04-27 22:59:15.067 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - ==> Parameters: 7c274c51-4b45-4cd9-be99-f853aecc6099(String)
+2022-04-27 22:59:15.068 [http-nio-8080-exec-4] DEBUG c.n.community.dao.LoginTicketMapper.selectByTicket - <==      Total: 1
+2022-04-27 22:59:15.068 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==>  Preparing: select id,username,password,salt,email,type,status,activation_code,header_url,create_time from user where id = ? 
+2022-04-27 22:59:15.068 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - ==> Parameters: 168(Integer)
+2022-04-27 22:59:15.069 [http-nio-8080-exec-4] DEBUG com.newcoder.community.dao.UserMapper.selectById - <==      Total: 1

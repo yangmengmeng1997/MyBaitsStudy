@@ -21,7 +21,14 @@ public interface CommunityConstant {
     int DEFAULT_EXPIRED_SECONDS = 3600*12 ;
 
     /*
-      勾选记住我的过期时间，较长
+      勾选记住我的过期时间，较长,默认存储24个小时 太长的话时间会溢出，就像之前的3600*24*30 不行，直接溢出登录失败
      */
-    int REMEMBER_EXPIRED_SECONDS = 3600*24*30;
+    int REMEMBER_EXPIRED_SECONDS = 3600*24;
+
+    /*
+      实体类型：帖子  --1
+      实体类型：评论  --2
+     */
+    int ENTITY_TYPE_POST = 1;
+    int ENTITY_TYPE_COMMENT = 2;
  }

@@ -95,15 +95,17 @@ public class LoginController implements CommunityConstant {
 
 
     /*
-       生成验证码存放在session里面
+       敏感信息生成验证码存放在session里面
      */
     @RequestMapping(path = "/Kaptcha",method = RequestMethod.GET)
     public void getKaptch(HttpServletResponse response, HttpSession session){
         //生成验证码
         String text = KaptchProducer.createText();
         BufferedImage image = KaptchProducer.createImage(text);
+
         //生成验证码图片展示，储存验证码的session
         session.setAttribute("kaptcha",text);
+
         //将图片输出给浏览器
         response.setContentType("image/png");
         try {
@@ -116,26 +118,28 @@ public class LoginController implements CommunityConstant {
     }
 
     /*
-       用户登录功能实现
+       用户登录功能实现，先判断验证码对不对，验证码不对，直接失败，不需要再去查询数据库了
        这里用的post请求，区别于前面的get请求
        参数说明:
        需要传入表单中提交的 用户名字，密码，用户输入的验证码，页面勾选的标记，
-       model需要装载返回的数据，session中存储之前生成的验证码，因此需要session
-       需要将登陆成功的数据ticket存入cookie中,需要使用HttpServletResponse对象
+       model需要装载返回的数据，session中存储之前生成的验证码，因此需要session。
+       需要将登陆成功的数据ticket存入cookie中,需要使用HttpServletResponse对象来获取登录凭证
+       session存储的是验证码，response携带的是自己存入的key-value作为cookie，
+       session中的验证码参考getKaptch函数中 session.setAttribute("kaptcha",text);
      */
     @RequestMapping(path = "/login" ,method = RequestMethod.POST)
     public String login(String username,String password,String code,boolean remember,Model model,HttpSession session,HttpServletResponse response){
         String kaptcha = (String) session.getAttribute("kaptcha");
-        //比较失败,返回登陆页面
+        //比较失败,返回登陆页面，验证码忽略大小写
         if(StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !StringUtils.equalsIgnoreCase(kaptcha,code)){
             model.addAttribute("codeMsg","验证码配对失败");
             return "/site/login";
         }
 
         //检查账号密码
-        int expriedSeconds = remember ?REMEMBER_EXPIRED_SECONDS:DEFAULT_EXPIRED_SECONDS;
+        int expriedSeconds = remember ? REMEMBER_EXPIRED_SECONDS:DEFAULT_EXPIRED_SECONDS;  //超时时间根据remember与否设置
         Map<String, Object> loginInfo = userService.login(username, password, expriedSeconds);
-        //登录成功
+        //登录成功 map里面就会存储 key-value的值 key是固定的"ticket" , value 是存储在登录表中的ticket登录凭证
         if(loginInfo.containsKey("ticket")){
             Cookie cookie = new Cookie("ticket",loginInfo.get("ticket").toString());
             cookie.setPath(contextPath);  //设置作用范围的有效路劲

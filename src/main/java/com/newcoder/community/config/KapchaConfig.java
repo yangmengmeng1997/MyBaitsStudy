@@ -16,7 +16,7 @@ import java.util.Properties;
 @Configuration   //声明为配置类
 public class KapchaConfig {
     @Bean   //表示这个类可以被框架管理
-    public Producer KaptchaProducer(){
+    public Producer KaptchaProducer(){   //实例化这个接口
         Properties properties = new Properties();
         //配置属性值
         properties.setProperty("kaptcha.image.width","100");
@@ -26,9 +26,9 @@ public class KapchaConfig {
         properties.setProperty("kaptcha.textproducer.char.string","0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ");
         properties.setProperty("kaptcha.textproducer.char.length","4");
         properties.setProperty("kaptcha.noise.impl","com.google.code.kaptcha.impl.DefaultNoise");
-        DefaultKaptcha kaptcha = new DefaultKaptcha();
-        Config config = new Config(properties);
+        DefaultKaptcha kaptcha = new DefaultKaptcha();   //继承接口的实现类
+        Config config = new Config(properties);  //配置类
         kaptcha.setConfig(config);
-        return kaptcha;
+        return kaptcha;  //返回子类的实现
     }
 }

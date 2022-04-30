@@ -2,9 +2,11 @@ package com.newcoder.community;
 
 import com.newcoder.community.dao.DiscussPostMapper;
 import com.newcoder.community.dao.LoginTicketMapper;
+import com.newcoder.community.dao.MessageMapper;
 import com.newcoder.community.dao.UserMapper;
 import com.newcoder.community.entity.DiscussPost;
 import com.newcoder.community.entity.LoginTicket;
+import com.newcoder.community.entity.Message;
 import com.newcoder.community.entity.User;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.BeansException;
@@ -13,6 +15,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.TestExecutionListeners;
 
 import java.util.Date;
 import java.util.Iterator;
@@ -33,6 +36,9 @@ public class MapperTests{
 
     @Autowired(required = false)
     private LoginTicketMapper loginTicketMapper;
+
+    @Autowired(required = false)
+    private MessageMapper messageMapper;
 
     @Test
     public void testSelectUser(){
@@ -85,6 +91,27 @@ public class MapperTests{
         System.out.println(loginTicket);
         int rows = loginTicketMapper.updateStatus("asgafdhdsgf",0);
         System.out.println(rows);
+    }
+
+    @Test   //测试message的相关方法
+    public void testMesseage(){
+        List<Message> messages = messageMapper.selectConversations(111, 0, 20);
+        for(Message m:messages){
+            System.out.println(m);
+        }
+        int count = messageMapper.selectConversationCount(111);
+        System.out.println(count);
+
+        List<Message> messages1 = messageMapper.selectLetters("111_112",0,10);
+        for(Message m:messages1){
+            System.out.println(m);
+        }
+
+        int count1 = messageMapper.selectLetterCount("111_112");
+        System.out.println(count1);
+
+        int count2 = messageMapper.selectLetterUnreadCount(131,"111_131");
+        System.out.println(count2);
     }
 
 }

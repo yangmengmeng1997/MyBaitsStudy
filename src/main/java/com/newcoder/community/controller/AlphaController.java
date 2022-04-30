@@ -150,7 +150,7 @@ public class AlphaController {
 
 
 
-    //cookie实例，在客户机端存储
+    //cookie实例，在客户机端存储，只能存字符串
     @RequestMapping(path="/cookie/set", method = RequestMethod.GET)
     @ResponseBody
     public String setCookie(HttpServletResponse response){
@@ -168,11 +168,12 @@ public class AlphaController {
     @RequestMapping(path = "/cookie/get", method = RequestMethod.GET)
     @ResponseBody
     public String getCookie(@CookieValue("code") String cookie){
+        //将RequestBody中的键为“code”的赋值给形参cookie，即可获得cookie的值
         System.out.println(cookie);
         return "get cookie";
     }
 
-    //测试Session
+    //测试Session , session可以存其他类型的数据都可以存储，不用创建对象，框架自动将session对象注入
     @RequestMapping(path="/session/set",method = RequestMethod.GET)
     @ResponseBody
     public String setSession(HttpSession session){
@@ -191,4 +192,12 @@ public class AlphaController {
         return "get session";
     }
 
+    //测试ajax 提交数据所以用post请求
+    @RequestMapping(path = "/ajax",method = RequestMethod.POST)
+    @ResponseBody
+    public String testAjax(String name,int age){
+        System.out.println(name);
+        System.out.println(age);
+        return CommunityUtil.getJSONString(0,"操作成功");
+    }
 }

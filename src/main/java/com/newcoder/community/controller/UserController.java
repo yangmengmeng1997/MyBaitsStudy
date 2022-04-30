@@ -1,5 +1,6 @@
 package com.newcoder.community.controller;
 
+import com.newcoder.community.annotation.LoginRequired;
 import com.newcoder.community.entity.User;
 import com.newcoder.community.service.UserService;
 import com.newcoder.community.util.CommunityUtil;
@@ -25,6 +26,7 @@ import java.io.OutputStream;
 /**
  * @author xiuxiaoran
  * @date 2022/4/25 20:58
+ * 使用自定义的注解给拦截器进行拦截
  */
 @Controller
 @RequestMapping("user")
@@ -47,14 +49,16 @@ public class UserController {
     @Autowired
     private HostHolder hostHolder;   //需要知道当前用户，存储在这里
 
-    //访问账号设置页面
+    //访问账号设置页面 ，设置自定义标记，只有登录你才可以访问
+    @LoginRequired
     @RequestMapping(path = "/setting" , method = RequestMethod.GET)
     public String getSettingPage(){
         return "/site/setting";
     }
 
     //**********************************************
-    //这里重新设置修改密码的功能，独立实现
+    //这里重新设置修改密码的功能，独立实现，必须要登录才可以修改密码
+    @LoginRequired
     @RequestMapping(path = "/updatePassword" , method = RequestMethod.POST)
     public String updatePassword(Model model,String originPassword,String newPassword,String confirmPassword){
         //处理相关的逻辑
@@ -86,12 +90,13 @@ public class UserController {
             return "/site/setting";  //返回当前页面继续输入
         }
         //验证都通过了，更新密码
-        userService.updatePassword(user.getId(),newPassword);
+        userService.updatePassword(user.getId(),CommunityUtil.md5(newPassword)+user.getSalt());
         return "redirect:/index";   //重定向会首页表示成功，不然就结束，其实可以写个页面通知说面修改完毕的，这里就没写
     }
     //******************************************************
 
-    //更换头像
+    //更换头像 ，必须要登录
+    @LoginRequired
     @RequestMapping(path = "/upload",method = RequestMethod.POST)
     public String uploadHeader(MultipartFile headerImg, Model model){
         if(headerImg==null){
@@ -118,21 +123,22 @@ public class UserController {
             logger.error("上传文件失败"+e.getMessage());
             throw new RuntimeException("上传文件失败，服务器内部错误",e);
         }
-        //上传文件成功,更新用户的头像信息(web访问的路劲)
+        //上传文件成功,更新用户的头像信息(web访问的路劲)，这个是需要web的路劲才可以进行访问的
         //；例如： http://localhost:8080/community/user/header/xxx.png
         User user = hostHolder.getUser();
         String headerUrl = domain + contextPath + "/user/header/" + fileName;
-        userService.updateHeader(user.getId(),headerUrl);
+        userService.updateHeader(user.getId(),headerUrl);  //更新路劲
         return "redirect:/index";
     }
 
     //手动输出图片，就和那个访问验证码是一样的
     //借用response来返回图片信息
-    //java IO流就是空白
+    //java IO流就是空白 类的上面已经有user路劲了，所以路劲这样写就可以了。
+    //浏览器响应图片
     @RequestMapping(path = "/header/{fileName}", method = RequestMethod.GET)
     public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response){
         //服务器存放的图片路径
-        fileName = uploadPath + "/" +fileName;  //带上本地路劲的filename
+        fileName = uploadPath + "/" +fileName;  //带上服务器存储的filename
         //输出图片
         String suffix = fileName.substring(fileName.lastIndexOf("."));
         //响应图片文件
