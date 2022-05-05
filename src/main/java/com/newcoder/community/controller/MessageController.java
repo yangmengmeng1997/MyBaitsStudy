@@ -1,12 +1,15 @@
 package com.newcoder.community.controller;
 
+import com.alibaba.fastjson.JSONObject;
 import com.newcoder.community.entity.Message;
 import com.newcoder.community.entity.Page;
 import com.newcoder.community.entity.User;
 import com.newcoder.community.service.MessageService;
 import com.newcoder.community.service.UserService;
+import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.HostHolder;
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,6 +17,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.util.HtmlUtils;
 
 import java.util.*;
 
@@ -23,7 +27,7 @@ import java.util.*;
  * 处理私信相关的类
  */
 @Controller
-public class MessageController {
+public class MessageController implements CommunityConstant {
     @Autowired
     private MessageService messageService;
 
@@ -65,6 +69,11 @@ public class MessageController {
         //查询未读消息的数量,是查询所有的未读消息
         int letterUnderReaderCount = messageService.findLetterUnreadCount(user.getId(),null);
         model.addAttribute("letterUnderReaderCount",letterUnderReaderCount);
+
+        int noticeUnreaderCount = messageService.findNoticeUnreadCount(user.getId(),null);  //查询所有的系统未读消息
+
+        model.addAttribute("noticeUnreaderCount",noticeUnreaderCount);
+
         return "/site/letter";  //返回外面的会话列表
     }
 
@@ -147,5 +156,122 @@ public class MessageController {
         message.setCreateTime(new Date());
         messageService.addMessage(message);  //插入会话
         return CommunityUtil.getJSONString(0);
+    }
+
+    //显示系统通知列表,这不是有漏洞嘛，视频上面讲的演示的情况有比较多的漏洞，所以还是需要进行自己debug处理后端逻辑
+    //前端实在是搞不定
+    @RequestMapping(path="/notice/list",method = RequestMethod.GET)
+    public String getNoticeList(Model model){
+        User user = hostHolder.getUser();
+        //查询评论类的通知消息并且封装
+        Message message = messageService.findLatestNotice(user.getId(),TOPIC_COMMENT);
+        Map<String,Object> messagevo = new HashMap<>();
+        if(message!=null){
+            messagevo.put("message",message);
+            String content = HtmlUtils.htmlUnescape(message.getContent());  //将转义字符还原
+            HashMap<String,Object> data =  JSONObject.parseObject(content,HashMap.class);
+            messagevo.put("user",userService.findUserById((Integer) data.get("userId")));
+            messagevo.put("entityType",data.get("entityType"));
+            messagevo.put("entityId",data.get("entityId"));
+            messagevo.put("postId",data.get("postId"));
+
+            int count = messageService.findNoticeCount(user.getId(),TOPIC_COMMENT);
+            int unreadCount = messageService.findNoticeUnreadCount(user.getId(),TOPIC_COMMENT);
+            messagevo.put("count",count);
+            messagevo.put("unreadCount",unreadCount);
+        }else{
+            messagevo.put("message",null);  //没有用户评论时也需要可以点进去消息而不是报错啊
+        }
+        model.addAttribute("commentNotice",messagevo);
+
+        //查询点赞类的通知消息并且封装 , 类似
+        message = messageService.findLatestNotice(user.getId(),TOPIC_LIKE);
+        messagevo = new HashMap<>();
+        if(message!=null){
+            messagevo.put("message",message);
+            String content = HtmlUtils.htmlUnescape(message.getContent());  //将转义字符还原
+            HashMap<String,Object> data =  JSONObject.parseObject(content,HashMap.class);
+            messagevo.put("user",userService.findUserById((Integer) data.get("userId")));
+            messagevo.put("entityType",data.get("entityType"));
+            messagevo.put("entityId",data.get("entityId"));
+            messagevo.put("postId",data.get("postId"));
+
+            int count = messageService.findNoticeCount(user.getId(),TOPIC_LIKE);
+            int unreadCount = messageService.findNoticeUnreadCount(user.getId(),TOPIC_LIKE);
+            messagevo.put("count",count);
+            messagevo.put("unreadCount",unreadCount);
+        }else{
+            messagevo.put("message",null);  //没有用户点赞时也需要可以点进去消息而不是报错啊
+        }
+        model.addAttribute("likeNotice",messagevo);
+
+        //查询关注类的通知消息并且封装
+        message = messageService.findLatestNotice(user.getId(),TOPIC_FOLLOW);
+        messagevo = new HashMap<>();
+        if(message!=null){
+            messagevo.put("message",message);
+            String content = HtmlUtils.htmlUnescape(message.getContent());  //将转义字符还原
+            HashMap<String,Object> data =  JSONObject.parseObject(content,HashMap.class);
+            messagevo.put("user",userService.findUserById((Integer) data.get("userId")));
+            messagevo.put("entityType",data.get("entityType"));
+            messagevo.put("entityId",data.get("entityId"));
+
+            int count = messageService.findNoticeCount(user.getId(),TOPIC_FOLLOW);
+            int unreadCount = messageService.findNoticeUnreadCount(user.getId(),TOPIC_FOLLOW);
+            messagevo.put("count",count);
+            messagevo.put("unreadCount",unreadCount);
+        }else{
+            messagevo.put("message",null);  //没有用户关注时也需要可以点进去消息而不是报错啊
+        }
+        model.addAttribute("followNotice",messagevo);
+
+        //查询未读消息总数量
+        int letterUnreadCount = messageService.findLetterUnreadCount(user.getId(),null);
+
+        model.addAttribute("letterUnreadCount",letterUnreadCount);
+
+        int noticeUnreaderCount = messageService.findNoticeUnreadCount(user.getId(),null);  //
+
+        model.addAttribute("noticeUnreaderCount",noticeUnreaderCount);
+
+        return "/site/notice";
+    }
+
+    @RequestMapping(path = "/notice/detail/{topic}" ,method = RequestMethod.GET)
+    public String getNoticeDetail(@PathVariable("topic") String topic,Page page,Model model){
+        User user = hostHolder.getUser();
+        page.setLimit(5);
+        page.setPath("/notice/detail/"+topic);
+        page.setRows(messageService.findNoticeCount(user.getId(),topic));
+
+        List<Message> noticeList = messageService.findNotice(user.getId(),topic,page.getOffset(),page.getLimit());
+        List<HashMap<String,Object>> noticeVoList = new ArrayList<>();
+        if(noticeList!=null){
+            for(Message notice:noticeList){
+                HashMap<String,Object> map = new HashMap<>();
+                //存储某一类的通知
+                map.put("notice",notice);
+                //存储一类通知里面的每一个详细内容
+                String  content = HtmlUtils.htmlUnescape(notice.getContent());
+                //注意这里使用HashMap来存储类型来存储不会得到空值，用Map来接收容易得到空值
+                HashMap<String,Object> data = JSONObject.parseObject(content,HashMap.class);
+                map.put("user",userService.findUserById((Integer) data.get("userId")));
+                map.put("entityType",data.get("entityType"));
+                map.put("entityId",data.get("entityId"));
+                map.put("postId",data.get("postId"));
+                //通知的作者
+                map.put("fromUser",userService.findUserById(notice.getFromId()));
+
+                noticeVoList.add(map);
+            }
+        }
+        model.addAttribute("notices",noticeVoList);
+
+        //设置已读
+        List<Integer> ids = getUnreadLettersId(noticeList);
+        if(!ids.isEmpty()){
+            messageService.readMessage(ids);
+        }
+        return "/site/notice-detail";
     }
 }

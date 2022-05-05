@@ -32,6 +32,9 @@ public class ServiceLogAspect {
     public void before(JoinPoint joinPoint){
         //用户记录日志增加
         ServletRequestAttributes attributes  = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        if(attributes==null){
+            return;
+        }  //防止为空
         HttpServletRequest request = attributes.getRequest();
         String ip = request.getRemoteHost();   //获得登录IP
         String now  = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss").format(new Date());

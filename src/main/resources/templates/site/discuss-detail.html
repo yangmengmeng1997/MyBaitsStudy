@@ -83,7 +83,12 @@
 						<div class="text-muted mt-3">
 							发布于 <b th:text="${#dates.format(post.createTime,'yyyy-MM-dd HH:mm:ss')}">2019-04-15 15:32:18</b>
 							<ul class="d-inline float-right">
-								<li class="d-inline ml-2"><a href="#" class="text-primary">赞 11</a></li>
+								<li class="d-inline ml-2">
+									<!--这里是对帖子点赞-->
+									<a href="javascript:;" th:onclick="|like(this,1,${post.id},${post.userId},${post.id});|" class="text-primary">
+										<b th:text="${likeStatus==1?'已赞':'赞'}"> 赞 </b>  <i th:text="${likeCount}">11</i>
+									</a>
+								</li>
 								<li class="d-inline ml-2">|</li>
 								<li class="d-inline ml-2"><a href="#replyform" class="text-primary">回帖 <span th:text="${post.commentCount}">7</span></a></li>
 							</ul>
@@ -132,7 +137,15 @@
 							<div class="mt-4 text-muted font-size-12">
 								<span>发布于 <b th:text="${#dates.format(cvo.comment.createTime,'yyyy-MM-dd HH:mm:ss')}">2019-04-15 15:32:18</b></span>
 								<ul class="d-inline float-right">
-									<li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+									<li class="d-inline ml-2">
+										<!--
+										   对评论点赞，类型是2，传入this，便于标识，传入帖子或者评论的id便于更新
+										   是id，不是commentId，只是针对评论点赞，不是对帖子点赞
+										-->
+										<a href="javascript:;" th:onclick="|like(this,2,${cvo.comment.id},${cvo.comment.userId},${post.id});|" class="text-primary">
+											<b th:text="${cvo.likeStatusComment==1?'已赞':'赞'}">赞</b> (<i th:text="${cvo.likeCountComment}">1</i>)
+										</a>
+									</li>
 									<li class="d-inline ml-2">|</li>
 									<li class="d-inline ml-2"><a href="#" class="text-primary">回复(<i th:text="${cvo.replyCount}">2</i>)</a></li>
 								</ul>
@@ -156,7 +169,15 @@
 									<div class="mt-3">
 										<span th:text="${#dates.format(rvo.reply.createTime,'yyyy-MM-dd HH:mm:ss')}">2019-04-15 15:32:18</span>
 										<ul class="d-inline float-right">
-											<li class="d-inline ml-2"><a href="#" class="text-primary">赞(1)</a></li>
+											<li class="d-inline ml-2">
+												<!--
+												   对评论点赞，类型是2，传入this，便于标识，传入帖子或者评论的id便于更新
+												   是id，不是commentId，只是针对评论点赞，不是对帖子点赞
+										        -->
+												<a href="javascript:;" th:onclick="|like(this,2,${rvo.reply.id},${rvo.reply.userId},${post.id});|" class="text-primary">
+													<b th:text="${rvo.likeStatusReply==1?'已赞':'赞'}">赞</b> (<i th:text="${rvo.likeCountReply}">1</i>)
+												</a>
+											</li>
 											<li class="d-inline ml-2">|</li>
 											<!--这里是id选择器进行处理，使用的是#号-->
 											<li class="d-inline ml-2"><a th:href="|#huifu-${rvoStat.count}|" data-toggle="collapse" class="text-primary">回复</a></li>
@@ -293,5 +314,6 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" crossorigin="anonymous"></script>
 	<script th:src="@{/js/global.js}"></script>
+	<script th:src="@{/js/discuss.js}"></script>
 </body>
 </html>

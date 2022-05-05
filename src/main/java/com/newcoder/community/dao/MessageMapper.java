@@ -31,4 +31,19 @@ public interface MessageMapper {
 
     //将未读消息改为已读 , 一次性修改多条消息
     int updateStatus(List<Integer> ids,int status);
+
+    /*
+       通知相关的消息显示
+       三个主题；1.点赞，2.评论，3.跟随
+       那么外面的通知列表依靠这三个方法基本可以实现
+     */
+    //1. 查询某个主题下面的最新通知即可
+    Message selectLatestNotice(int userId,String topic);
+    //2.查询某个主体包含的通知数量
+    int selectNoticeCount(int userId,String topic);
+    //3.显示未读的通知数量
+    int selectNoticeUnreadCount(int userId,String topic);
+
+    //查询某个主题所包含的通知列表
+    List<Message> selectNotices(int userId,String topic ,int offset,int limit);
 }

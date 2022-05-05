@@ -29,6 +29,12 @@
          where status=0 and entity_type=#{entityType} and entity_id=#{entityId}
     </select>
 
+    <select id="selectCommentById" resultType="Comment">
+        select <include refid="selectFilds" />
+        from comment
+        where id =#{id}
+    </select>
+
     <insert id="insertComment" parameterType="Comment">
         insert into comment (<include refid="insertFilds"/>)
         values (#{userId},#{entityType},#{entityId},#{targetId},#{content},#{status},#{createTime})

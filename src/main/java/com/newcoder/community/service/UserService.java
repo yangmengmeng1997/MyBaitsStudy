@@ -8,17 +8,17 @@ import com.newcoder.community.entity.User;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.MailClient;
+import com.newcoder.community.util.RedisKeyUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
 import org.thymeleaf.context.Context;
 
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
+import java.util.*;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author xiuxiaoran
@@ -41,15 +41,24 @@ public class UserService implements CommunityConstant {
     @Value("${server.servlet.context-path}")
     private String contextPath;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     //*****************************************登录相关*****************
-    @Autowired(required = false)
-    private LoginTicketMapper loginTicketMapper;
+//    @Autowired(required = false)
+//    private LoginTicketMapper loginTicketMapper;
     //*****************************************************************
 
     public User findUserById(int id){
-        return userMapper.selectById(id);
+        //return userMapper.selectById(id);
+        User user = getCache(id);  //从redis中查询
+        if(user==null){
+            user = initCache(id);  //从数据库中查再存到redis中
+        }
+        return user;
     }
 
+    //但是这里你还是没有按照名字来进行优化，你只是优化了id。
     public User findUserByName(String name){
         return userMapper.selectByName(name);
     }
@@ -140,11 +149,13 @@ public class UserService implements CommunityConstant {
     }
 
     //返回激活的状态
+    //激活之后用户的状态得到改变
     public int activation(int userId,String code){
         User user = userMapper.selectById(userId);
         if(user.getStatus()==1) return ACTIVATION_REPEAT;
         else if(user.getActivationCode().equals(code)){
-            userMapper.updateStatus(userId,1);
+            userMapper.updateStatus(userId,1);   //用户信息得到修改了
+            clearCache(userId);    //将用户信息从缓存中删除，避免不一致的问题
             return ACTIVATION_SUCCESS;
         }else{
             return ACTIVATION_FAILURE;
@@ -197,7 +208,11 @@ public class UserService implements CommunityConstant {
         loginTicket.setTicket(CommunityUtil.generatedUUId());  //生成随机字符串
         loginTicket.setStatus(0);  //0 表示登录有效
         loginTicket.setExpired(new Date(System.currentTimeMillis()+expired*1000));
-        loginTicketMapper.insertLogin(loginTicket);  //存储登录凭证在数据库中
+        //将登录凭证存储在redis中
+        String redisKey = RedisKeyUtil.getTicketKey(loginTicket.getTicket());
+        redisTemplate.opsForValue().set(redisKey,loginTicket);  //redis会将对象序列化为字符串？可是你哪个对象没有实现序列化接口
+
+        //loginTicketMapper.insertLogin(loginTicket);  //存储登录凭证在数据库中
         loginInfo.put("ticket",loginTicket.getTicket());  // 存储ticket类似于这个session，之后将这个作为相应值发送给客户端
         return loginInfo;   //返回key-value
     }
@@ -206,7 +221,10 @@ public class UserService implements CommunityConstant {
        根据ticket，也就是登录凭证将状态设置为1即可
      */
     public void logout(String ticket){
-        loginTicketMapper.updateStatus(ticket,1);
+        String redisKey = RedisKeyUtil.getTicketKey(ticket);
+        LoginTicket loginTicket = (LoginTicket) redisTemplate.opsForValue().get(redisKey);   //获得登录凭证
+        loginTicket.setStatus(1);
+        redisTemplate.opsForValue().set(redisKey,loginTicket);  //更新之前的对象
     }
 
     /*
@@ -214,15 +232,17 @@ public class UserService implements CommunityConstant {
        根据登录凭证查询到登录用户的信息
      */
     public LoginTicket FindLoginTicket(String ticket){
-        return loginTicketMapper.selectByTicket(ticket);
+        String redisKey = RedisKeyUtil.getTicketKey(ticket);
+        return (LoginTicket) redisTemplate.opsForValue().get(redisKey);
     }
-
 
     /*
        修改图像路劲辅助完成换头像的功能
      */
     public int updateHeader(int userId,String headerUrl){
-        return userMapper.updateHeader(userId,headerUrl);
+        int row = userMapper.updateHeader(userId,headerUrl);
+        clearCache(userId);
+        return row;
     }
 
     /*
@@ -230,6 +250,60 @@ public class UserService implements CommunityConstant {
        这边获取view的内容，转到controller处理
      */
     public int updatePassword(int userId,String password){
-        return userMapper.updatePassword(userId,password);
+
+        int row = userMapper.updatePassword(userId,password);
+        clearCache(userId);
+        return row;
+}
+
+
+    /*
+        用redis做用户缓存，先尝试在内存数据库中查找redis的用户信息，之后找不到再去mysql数据库中查找，经常登录的就比较快
+        但是还有一点就是这个缓存信息需要有过期时间，不然和数据库没区别
+        这里只演示了对ID进行优化处理，但是没有对名字进行优化处理
+        1.优先从缓存中取值
+        2.取不到初始化缓存数据
+        3.数发生改变时需要删除redis缓存中的数据
+     */
+    // 1.优先从缓存中取值,查询不到连index都启动不了嘛。。。。
+    private User getCache(int userId){
+        String redisKey = RedisKeyUtil.getUserKey(userId);
+        return (User) redisTemplate.opsForValue().get(redisKey);
     }
+
+    //2.不到初始化缓存用户数据,将用户的数据存入redis中
+    private User initCache(int userId){
+        User user = userMapper.selectById(userId);
+        String redisKey = RedisKeyUtil.getUserKey(userId);
+        //注意这里缓存的是用户的登录过期时间，因为是临时的缓存
+        redisTemplate.opsForValue().set(redisKey,user,3600, TimeUnit.SECONDS);
+        return user;
+    }
+
+    //3.数据变更时清理缓存
+    private void clearCache(int userId){
+        String redisKey = RedisKeyUtil.getUserKey(userId);
+        redisTemplate.delete(redisKey);  //直接删除
+    }
+
+    //根据用户类型提供权限
+//    public Collection<? extends GrantedAuthority> getAuthorities(int userId){
+//        User user = userMapper.selectById(userId);
+//
+//        List<GrantedAuthority> list = new ArrayList<>();
+//        list.add(new GrantedAuthority() {
+//            @Override
+//            public String getAuthority() {
+//                switch (user.getType()){
+//                    case 1:
+//                        return AUTHORITY_ADMIN;
+//                    case 2:
+//                        return AUTHORITY_MODERATOR;
+//                    default:
+//                        return AUTHORITY_USER;
+//                }
+//            }
+//        });
+//        return list;
+//    }
 }

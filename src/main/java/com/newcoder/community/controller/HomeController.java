@@ -4,7 +4,9 @@ import com.newcoder.community.entity.DiscussPost;
 import com.newcoder.community.entity.Page;
 import com.newcoder.community.entity.User;
 import com.newcoder.community.service.DiscussPostService;
+import com.newcoder.community.service.LikeService;
 import com.newcoder.community.service.UserService;
+import com.newcoder.community.util.CommunityConstant;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,14 +21,18 @@ import java.util.Map;
 /**
  * @author xiuxiaoran
  * @date 2022/4/20 22:48
+ * 控制首页的一些功能实现
  */
 @Controller
-public class HomeController {
+public class HomeController implements CommunityConstant {
     @Autowired
     private DiscussPostService discussPostService;
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private LikeService likeService;
 
     /*
         获得首页，并且分页的相关功能进行封装，进行响应
@@ -49,6 +55,11 @@ public class HomeController {
                 map.put("post",post);   //存储的是讨论数据
                 User user = userService.findUserById(post.getUserId());
                 map.put("user",user);  //存储的是根据ID查询到的具体的User对象
+
+                //增加查询帖子点赞数量
+                long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST,post.getId());
+                map.put("likeCount",likeCount);
+
                 discussPosts.add(map);
             }
         }
@@ -61,6 +72,9 @@ public class HomeController {
         return "/error/500";
     }
 
-
-
+    //没有权限访问，跳转到404
+    @RequestMapping(path = "/denied",method = RequestMethod.GET)
+    public String getDeniedPage(){
+        return "/error/404";
+    }
 }

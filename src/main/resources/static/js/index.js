@@ -5,6 +5,13 @@ $(function(){
 function publish() {
 	$("#publishModal").modal("hide");
 
+	//发送请求头之前，需要设置请求消息
+	// var token = $("meta[name='_csrf']").attr("content");
+	// var header = $("meta[name='_csrf_header']").attr("content");
+	// $(document).ajaxSend(function (e,xhr,options) {
+	// 	xhr.setRequestHeader(header,token);
+	// });
+
 	//获取标题和内容通过标题和正文发布
 	var title = $("#recipient-name").val();
 	var content = $("#message-text").val();

@@ -28,7 +28,39 @@ public interface CommunityConstant {
     /*
       实体类型：帖子  --1
       实体类型：评论  --2
+      用户实体      --3
      */
     int ENTITY_TYPE_POST = 1;
     int ENTITY_TYPE_COMMENT = 2;
+    int ENTITY_TYPE_USER = 3;
+
+    /*
+       消息通知的相关常量
+       消息主题定义
+       评论："comment"
+       点赞："like"
+       关注："follow"
+       发帖：“publish"
+       事件的主体均需要在kafka里面定义
+     */
+     String TOPIC_COMMENT = "comment";
+     String TOPIC_LIKE = "like";
+     String TOPIC_FOLLOW = "follow";
+
+     String TOPIC_PUBLISH = "publish";
+
+     /*
+        系统用户的Id=1
+      */
+     int SYSTEM_ID=1;
+
+     /*
+        权限控制
+        普通用户：user
+        管理员：admin
+        版主：
+      */
+     String AUTHORITY_USER = "user";
+     String AUTHORITY_ADMIN = "admin";
+     String AUTHORITY_MODERATOR = "moderator";
  }

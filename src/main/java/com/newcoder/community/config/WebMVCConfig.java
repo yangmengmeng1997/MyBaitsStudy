@@ -3,6 +3,7 @@ package com.newcoder.community.config;
 import com.newcoder.community.controller.interceptor.AlphaInterceptor;
 import com.newcoder.community.controller.interceptor.LoginRequiredInterceptor;
 import com.newcoder.community.controller.interceptor.LoginTicketInterceptor;
+import com.newcoder.community.controller.interceptor.MessageInterceptor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -14,6 +15,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
  * @date 2022/4/25 17:27
  * 拦截器的配置，主要需要的是配置拦截器
  * 每一个写好的拦截器类都i需要在这里进行注册配置
+ * 在登录时我们使用spring security做权限检查，废弃掉之前的即可
  */
 @Configuration
 public class WebMVCConfig implements WebMvcConfigurer {
@@ -22,10 +24,13 @@ public class WebMVCConfig implements WebMvcConfigurer {
     private AlphaInterceptor alphaInterceptor;
 
     @Autowired
-    private LoginTicketInterceptor loginTicketInterceptor;
+    private LoginTicketInterceptor loginTicketInterceptor;    //废弃
 
     @Autowired
     private LoginRequiredInterceptor loginRequiredInterceptor;
+
+    @Autowired
+    private MessageInterceptor messageInterceptor;
 
     @Override  //注册接口的方法实现
     public void addInterceptors(InterceptorRegistry registry) {
@@ -41,5 +46,8 @@ public class WebMVCConfig implements WebMvcConfigurer {
 
         //排除拦截静态资源
         registry.addInterceptor(loginRequiredInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
+
+        //排除拦截静态资源
+        registry.addInterceptor(messageInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
     }
 }

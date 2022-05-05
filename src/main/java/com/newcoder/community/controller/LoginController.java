@@ -6,11 +6,14 @@ import com.newcoder.community.entity.User;
 import com.newcoder.community.service.UserService;
 import com.newcoder.community.util.CommunityConstant;
 
+import com.newcoder.community.util.CommunityUtil;
+import com.newcoder.community.util.RedisKeyUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -23,6 +26,7 @@ import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.util.Map;
+import java.util.concurrent.TimeUnit;
 
 /**
  * @author xiuxiaoran
@@ -41,6 +45,9 @@ public class LoginController implements CommunityConstant {
 
     @Value("${server.servlet.context-path}")
     private String contextPath;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     @RequestMapping(path="/register" , method = RequestMethod.GET)
     public String getRegisterPage(){
@@ -96,15 +103,25 @@ public class LoginController implements CommunityConstant {
 
     /*
        敏感信息生成验证码存放在session里面
+       现在使用redis存储验证码，优化
      */
     @RequestMapping(path = "/Kaptcha",method = RequestMethod.GET)
-    public void getKaptch(HttpServletResponse response, HttpSession session){
+    public void getKaptch(HttpServletResponse response){
         //生成验证码
         String text = KaptchProducer.createText();
         BufferedImage image = KaptchProducer.createImage(text);
 
         //生成验证码图片展示，储存验证码的session
-        session.setAttribute("kaptcha",text);
+        //session.setAttribute("kaptcha",text);
+        //存储验证码的key,验证码的归属
+        String kaptchaOwner = CommunityUtil.generatedUUId();
+        Cookie cookie = new Cookie("kaptchaOwner",kaptchaOwner);
+        cookie.setMaxAge(60);
+        cookie.setPath(contextPath);
+        response.addCookie(cookie);
+        //将验证码存入redis
+        String redisKey= RedisKeyUtil.getKaptchaKey(kaptchaOwner);
+        redisTemplate.opsForValue().set(redisKey,text,60, TimeUnit.SECONDS);  // 存储验证码60s有效
 
         //将图片输出给浏览器
         response.setContentType("image/png");
@@ -126,10 +143,19 @@ public class LoginController implements CommunityConstant {
        需要将登陆成功的数据ticket存入cookie中,需要使用HttpServletResponse对象来获取登录凭证
        session存储的是验证码，response携带的是自己存入的key-value作为cookie，
        session中的验证码参考getKaptch函数中 session.setAttribute("kaptcha",text);
+
+       优化不再使用Sesion处理了，使用redis存取
      */
     @RequestMapping(path = "/login" ,method = RequestMethod.POST)
-    public String login(String username,String password,String code,boolean remember,Model model,HttpSession session,HttpServletResponse response){
-        String kaptcha = (String) session.getAttribute("kaptcha");
+    public String login(String username,String password,String code,boolean remember,Model model,
+                        HttpServletResponse response,@CookieValue("kaptchaOwner") String kaptchaOwner){
+        String kaptcha = null;
+        if(StringUtils.isNotBlank(kaptchaOwner)){
+            String redisKey = RedisKeyUtil.getKaptchaKey(kaptchaOwner);
+            kaptcha = (String) redisTemplate.opsForValue().get(redisKey);
+        }
+
+        //String kaptcha = (String) session.getAttribute("kaptcha");  //session的使用淘汰了
         //比较失败,返回登陆页面，验证码忽略大小写
         if(StringUtils.isBlank(kaptcha) || StringUtils.isBlank(code) || !StringUtils.equalsIgnoreCase(kaptcha,code)){
             model.addAttribute("codeMsg","验证码配对失败");
@@ -160,6 +186,8 @@ public class LoginController implements CommunityConstant {
     @RequestMapping(path="/logout" ,method = RequestMethod.GET)
     public String logout(@CookieValue("ticket") String cookie){
         userService.logout(cookie);
+        //清理权限
+        //SecurityContextHolder.clearContext();
         return "redirect:/login";  //重定向到login请求get,警告不用管，可以跳转即可
     }
 }

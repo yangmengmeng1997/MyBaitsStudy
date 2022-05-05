@@ -43,6 +43,13 @@ public class LoginTicketInterceptor implements HandlerInterceptor{
 
                 //在本次请求中存储user,保证每一个线程都可以单独持有
                 hostHolder.setUser(user);
+
+                //构建用户认证的结果，并且存入SecurityContext中，便于认证授权
+                //每次登录之后就存储用户的登录信息，并且保存用户的权限
+//                Authentication authentication = new UsernamePasswordAuthenticationToken(
+//                        user, user.getPassword(),userService.getAuthorities(user.getId())
+//                );
+//                SecurityContextHolder.setContext(new SecurityContextImpl(authentication));
             }
         }
         return true;   //只有为true才执行之后的
@@ -59,5 +66,6 @@ public class LoginTicketInterceptor implements HandlerInterceptor{
     @Override   //模板使用完成之后需要清理掉所有的信息，结束回话
     public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex) throws Exception {
          hostHolder.clear();
+         //SecurityContextHolder.clearContext();  // 清理完用户之后也要清理用户的权限
     }
 }

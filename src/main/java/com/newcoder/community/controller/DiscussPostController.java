@@ -1,16 +1,11 @@
 package com.newcoder.community.controller;
 
-import com.newcoder.community.entity.Comment;
-import com.newcoder.community.entity.DiscussPost;
-import com.newcoder.community.entity.Page;
-import com.newcoder.community.entity.User;
-import com.newcoder.community.service.CommentService;
-import com.newcoder.community.service.DiscussPostService;
-import com.newcoder.community.service.UserService;
+import com.newcoder.community.entity.*;
+import com.newcoder.community.event.EventProducer;
+import com.newcoder.community.service.*;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.HostHolder;
-import org.apache.ibatis.ognl.Ognl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -42,6 +37,15 @@ public class DiscussPostController implements CommunityConstant {
     @Autowired
     private CommentService commentService;  //需要查询评论详情
 
+    @Autowired
+    private LikeService likeService;  //帖子点赞的一些处理
+
+    @Autowired
+    private ElasticSearchService elasticSearchService;   //增加es搜索功能
+
+    @Autowired
+    private EventProducer producer;  //触发消息队列生产者
+
     @RequestMapping(path="/addPost",method = RequestMethod.POST)
     @ResponseBody
     public String addPost(String title,String content){
@@ -56,6 +60,16 @@ public class DiscussPostController implements CommunityConstant {
         post.setContent(content);
         post.setCreateTime(new Date());
         discussPostService.addDiscussPost(post);
+
+        //触发发帖子事件，将数据加入到es服务器上面，使得数据之后可以被搜索到
+        Event event = new Event()
+                      .setTopic(TOPIC_PUBLISH)
+                .setUserId(user.getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(post.getId());
+
+        producer.fireEvent(event);  //触发事件
+
         //报错之后会统一处理
         return CommunityUtil.getJSONString(0,"发布成功");
     }
@@ -63,13 +77,23 @@ public class DiscussPostController implements CommunityConstant {
     //查询帖子详情数据的一些方法,增加参数添加Page用于分页
     //所有的实体类都会被分装到model中可以供前端使用数据
     @RequestMapping(value = "/detail/{discussPostId}" , method = RequestMethod.GET)
-    public String selectPostById(@PathVariable("discussPostId") int id, Model model, Page page){ //故意声明的不一样也可以获取到数值吗,这个id是帖子的id不是user的id
+    public String selectPostById(@PathVariable("discussPostId") int id, Model model, Page page){
+        //故意声明的不一样也可以获取到数值吗,这个id是帖子的id不是user的id
         //帖子
         DiscussPost post = discussPostService.findDiscussPostById(id);
         model.addAttribute("post",post);
         //作者
         User user = userService.findUserById(post.getUserId());
         model.addAttribute("user",user);
+
+        //帖子的点赞数量等
+        long likeCount = likeService.findEntityLikeCount(ENTITY_TYPE_POST,id);  //查询帖子的数量点赞的ID
+        model.addAttribute("likeCount",likeCount);
+
+        //点赞状态 没有登录就没法显示对应的用户看见的状态,又是写反了吗。。。。为null值就是0
+        int likeStatus =hostHolder.getUser()==null?0:likeService.findEntityStatus(hostHolder.getUser().getId(),ENTITY_TYPE_POST,id);
+        model.addAttribute("likeStatus",likeStatus);
+
         //还有帖子的回复等信息都没有查询，先不急
         //完善
         page.setLimit(5);
@@ -95,6 +119,15 @@ public class DiscussPostController implements CommunityConstant {
                 commentvo.put("user",userService.findUserById(comment.getUserId()));
                 //帖子有评论，评论下面又有多条评论
 
+                //加入点赞的功能补充
+                //帖子的点赞数量等
+                long likeCountComment = likeService.findEntityLikeCount(ENTITY_TYPE_COMMENT,comment.getId());  //查询帖子的数量点赞的ID
+                commentvo.put("likeCountComment",likeCountComment);
+
+                //点赞状态 没有登录就没法显示对应的用户看见的状态
+                int likeStatusComment =hostHolder.getUser()==null?0:likeService.findEntityStatus(hostHolder.getUser().getId(),ENTITY_TYPE_COMMENT,comment.getId());
+                commentvo.put("likeStatusComment",likeStatusComment);
+                //
                 //回复列表，选取的是某条评论下面的所有回复评论消息,不做分页处理
                 //传入的是这条评论的Id
                 List<Comment> replyList = commentService.findCommentByEntity(ENTITY_TYPE_COMMENT, comment.getId(), 0, Integer.MAX_VALUE);
@@ -107,6 +140,16 @@ public class DiscussPostController implements CommunityConstant {
                     replyvo.put("reply",reply);
                     //存储回复的user信息
                     replyvo.put("user",userService.findUserById(reply.getUserId()));
+
+                    //增加点赞状态
+                    //帖子的点赞数量等
+                    long likeCountReply = likeService.findEntityLikeCount(ENTITY_TYPE_COMMENT,reply.getId());  //查询帖子的数量点赞的ID
+                    replyvo.put("likeCountReply",likeCountReply);
+
+                    //点赞状态 没有登录就没法显示对应的用户看见的状态
+                    int likeStatusReply =hostHolder.getUser()==null?0:likeService.findEntityStatus(hostHolder.getUser().getId(),ENTITY_TYPE_COMMENT,reply.getId());
+                    replyvo.put("likeStatusReply",likeStatusReply);
+
                     //回复的目标也就是target-id 是多少
                     User target = reply.getTargetId()==0?null:userService.findUserById(reply.getTargetId());
                     replyvo.put("target",target);

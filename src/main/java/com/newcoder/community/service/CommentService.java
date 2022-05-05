@@ -37,6 +37,10 @@ public class CommentService implements CommunityConstant {
         return commentMapper.selectRowsByEntity(entityType,entityId);
     }
 
+    public Comment findCommentById(int id){
+        return commentMapper.selectCommentById(id);
+    }
+
     //增加帖子的业务,操作时保证原子性,还需要敏感词过滤
     @Transactional(isolation = Isolation.READ_COMMITTED,propagation = Propagation.REQUIRED)
     public int addComment(Comment comment){

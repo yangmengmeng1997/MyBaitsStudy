@@ -42,8 +42,8 @@
         </if>
     </select>
 
-    <!--insert语句后面能不能加括号！！！！-->
-    <insert id="insertDiscussPost" >
+    <!--insert语句后面能不能加括号！！！！ 需要加上keyProperty指明主键是谁-->
+    <insert id="insertDiscussPost" parameterType="DiscussPost" keyProperty="id">
         insert into discuss_post (<include refid="InsertFields"/>)
         values (#{userId},#{title},#{content},#{type},#{status},#{createTime},#{commentCount},#{score});
     </insert>

@@ -8,8 +8,10 @@ import org.apache.ibatis.annotations.*;
  * @date 2022/4/25 12:22
  * 不再使用mapper的配置文件来进行sql书写，而是采用注解的方式生成
  * 感觉不如xml
+ * 使用redis进行优化之后，这个方法废弃掉
  */
 @Mapper
+@Deprecated
 public interface LoginTicketMapper {
 
     @Insert(

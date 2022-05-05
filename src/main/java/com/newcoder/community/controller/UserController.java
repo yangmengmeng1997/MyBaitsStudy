@@ -2,7 +2,10 @@ package com.newcoder.community.controller;
 
 import com.newcoder.community.annotation.LoginRequired;
 import com.newcoder.community.entity.User;
+import com.newcoder.community.service.FellowService;
+import com.newcoder.community.service.LikeService;
 import com.newcoder.community.service.UserService;
+import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.HostHolder;
 import org.apache.commons.lang3.StringUtils;
@@ -30,7 +33,7 @@ import java.io.OutputStream;
  */
 @Controller
 @RequestMapping("user")
-public class UserController {
+public class UserController implements CommunityConstant {
 
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
 
@@ -48,6 +51,12 @@ public class UserController {
 
     @Autowired
     private HostHolder hostHolder;   //需要知道当前用户，存储在这里
+
+    @Autowired
+    private LikeService likeService;  //查询点赞数量
+
+    @Autowired
+    private FellowService fellowService;
 
     //访问账号设置页面 ，设置自定义标记，只有登录你才可以访问
     @LoginRequired
@@ -157,5 +166,35 @@ public class UserController {
         } catch (IOException e) {
             logger.error("读取图像失败"+e.getMessage());
         }
+    }
+
+
+    //个人主页查询，显示点赞等信息
+    @RequestMapping(value = "/profile/{userId}",method = RequestMethod.GET)
+    public String getUserProfile(@PathVariable("userId") int userId,Model model){
+        User user = userService.findUserById(userId);
+        if(user==null){
+            throw new RuntimeException("用户不存在");
+        }
+        //用户的基本信息显示给页面
+        model.addAttribute("user",user);
+        //点赞数量,查询用户的被点赞数量
+        int likeCount = likeService.findUserLikeCount(userId);
+        model.addAttribute("likeCount",likeCount);
+
+        //关注的数量, 这里简化了只是假设实体是人进行关注
+        long followeeCount =  fellowService.findFolloweeCount(userId,ENTITY_TYPE_USER);
+        model.addAttribute("followeeCount",followeeCount);
+        //被关注，也就是粉丝的数量
+        long followerCount = fellowService.findFollowerCount(ENTITY_TYPE_USER,userId);  //被关注的数量，实体只能是人啊，不能说帖子关注
+        model.addAttribute("followerCount",followerCount);
+        //是否已经被关注
+        boolean isFollowed = false;
+        if(hostHolder.getUser()!=null){
+            //必须保证登录 , 因为是当前用户在操做，所以用户id是当前用户id，userId是现在你点进去判断有没有fellow的实体。
+            isFollowed = fellowService.isFollowed(hostHolder.getUser().getId(),ENTITY_TYPE_USER,userId);
+        }
+        model.addAttribute("isFollowed",isFollowed);
+        return "site/profile";
     }
 }

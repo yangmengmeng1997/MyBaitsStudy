@@ -1,0 +1,539 @@
+2022-04-30 15:05:42.529 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 12420 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:05:42.550 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:05:42.584 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:05:42.584 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:05:44.005 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:05:44.005 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:05:44.005 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:05:44.005 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:05:44.006 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:05:44.009 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:05:44.016 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:05:44.016 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:05:44.016 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:05:44.102 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:05:44.102 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1515 ms
+2022-04-30 15:05:44.598 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:05:44.701 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:05:44.713 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:05:44.726 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:05:44.750 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 2.649 seconds (JVM running for 3.709)
+2022-04-30 15:05:52.949 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:05:52.950 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:05:52.951 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:05:52.986 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:05:53.067 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:12:31.252 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 35924 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:12:31.254 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:12:31.283 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:12:31.283 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:12:32.053 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:12:32.054 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:12:32.054 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:12:32.054 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:12:32.054 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:12:32.057 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:12:32.062 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:12:32.063 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:12:32.063 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:12:32.140 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:12:32.141 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 857 ms
+2022-04-30 15:12:32.547 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:12:32.639 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:12:32.652 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:12:32.667 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:12:32.676 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.754 seconds (JVM running for 2.534)
+2022-04-30 15:12:38.731 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:12:38.733 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:12:38.734 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:12:38.754 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:12:38.832 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:23:13.762 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 35616 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:23:13.764 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:23:13.810 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:23:13.811 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:23:14.731 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:23:14.731 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:23:14.731 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:23:14.731 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:23:14.731 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:23:14.734 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:23:14.740 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:23:14.740 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:23:14.740 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:23:14.821 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:23:14.822 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1010 ms
+2022-04-30 15:23:15.261 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:23:15.360 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:23:15.374 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:23:15.388 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:23:15.397 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 2.023 seconds (JVM running for 2.768)
+2022-04-30 15:23:23.501 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:23:23.505 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:23:23.506 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:23:23.530 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:23:23.614 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:25:51.413 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 36968 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:25:51.414 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:25:51.447 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:25:51.447 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:25:52.309 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:25:52.309 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:25:52.309 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:25:52.310 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:25:52.310 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:25:52.312 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:25:52.319 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:25:52.319 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:25:52.319 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:25:52.399 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:25:52.399 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 952 ms
+2022-04-30 15:25:53.046 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:25:53.141 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:25:53.156 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:25:53.172 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:25:53.182 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 2.144 seconds (JVM running for 3.849)
+2022-04-30 15:26:01.235 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:26:01.236 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:26:01.236 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-04-30 15:26:01.259 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:26:01.353 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:30:33.816 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-04-30 15:30:33.822 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-04-30 15:33:14.098 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 35996 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:33:14.100 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:33:14.146 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:33:14.146 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:33:14.976 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:33:14.978 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:33:14.978 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:33:14.978 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:33:14.978 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:33:14.981 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:33:14.988 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:33:14.988 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:33:14.989 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:33:15.070 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:33:15.070 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 924 ms
+2022-04-30 15:33:15.535 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:33:15.647 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:33:15.660 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:33:15.676 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:33:15.685 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 2.002 seconds (JVM running for 3.052)
+2022-04-30 15:33:24.180 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:33:24.181 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:33:24.182 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:33:24.202 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:33:24.288 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:33:44.673 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown initiated...
+2022-04-30 15:33:44.678 [SpringApplicationShutdownHook] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Shutdown completed.
+2022-04-30 15:33:47.182 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 10420 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:33:47.185 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:33:47.239 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:33:47.239 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:33:48.002 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:33:48.002 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:33:48.002 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:33:48.002 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:33:48.003 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:33:48.005 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:33:48.010 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:33:48.010 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:33:48.010 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:33:48.087 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:33:48.088 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 848 ms
+2022-04-30 15:33:48.496 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:33:48.587 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:33:48.599 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:33:48.612 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:33:48.621 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.781 seconds (JVM running for 2.822)
+2022-04-30 15:34:05.948 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:34:05.949 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:34:05.951 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:34:05.972 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:34:06.057 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:39:17.192 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 38536 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:39:17.194 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:39:17.230 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:39:17.231 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:39:17.983 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:39:17.984 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:39:17.984 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:39:17.984 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:39:17.984 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:39:17.987 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:39:17.992 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:39:17.992 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:39:17.992 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:39:18.066 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:39:18.067 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 836 ms
+2022-04-30 15:39:18.494 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:39:18.578 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:39:18.590 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:39:18.603 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:39:18.612 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 2.026 seconds (JVM running for 2.93)
+2022-04-30 15:39:32.674 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:39:32.675 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:39:32.676 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:39:32.696 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:39:32.779 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:48:16.255 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 38044 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:48:16.257 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:48:16.284 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:48:16.284 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:48:17.023 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:48:17.023 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:48:17.024 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:48:17.024 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:48:17.024 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:48:17.026 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:48:17.032 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:48:17.032 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:48:17.032 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:48:17.116 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:48:17.116 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 831 ms
+2022-04-30 15:48:17.500 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:48:17.582 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:48:17.594 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:48:17.607 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:48:17.616 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.739 seconds (JVM running for 2.558)
+2022-04-30 15:48:25.940 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:48:25.942 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:48:25.943 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 15:48:25.964 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:48:26.043 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 15:54:26.519 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 19040 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 15:54:26.521 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 15:54:26.556 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 15:54:26.556 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 15:54:27.320 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 15:54:27.320 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 15:54:27.320 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 15:54:27.321 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 15:54:27.321 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 15:54:27.323 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 15:54:27.329 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:54:27.330 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 15:54:27.330 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 15:54:27.409 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 15:54:27.410 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 853 ms
+2022-04-30 15:54:27.812 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 15:54:27.891 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 15:54:27.903 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 15:54:27.916 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 15:54:27.924 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.862 seconds (JVM running for 2.629)
+2022-04-30 15:54:37.173 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 15:54:37.174 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 15:54:37.174 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-04-30 15:54:37.196 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 15:54:37.280 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 16:07:28.834 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 39228 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 16:07:28.835 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 16:07:28.865 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 16:07:28.865 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 16:07:29.601 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 16:07:29.602 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 16:07:29.602 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 16:07:29.602 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 16:07:29.602 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 16:07:29.605 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 16:07:29.610 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:07:29.610 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 16:07:29.611 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 16:07:29.690 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 16:07:29.690 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 825 ms
+2022-04-30 16:07:30.077 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 16:07:30.157 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 16:07:30.170 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:07:30.183 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 16:07:30.192 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.694 seconds (JVM running for 2.484)
+2022-04-30 16:07:41.102 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 16:07:41.103 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 16:07:41.103 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-04-30 16:07:41.122 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 16:07:41.203 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 16:14:41.054 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 18648 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 16:14:41.056 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 16:14:41.086 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 16:14:41.086 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 16:14:41.821 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 16:14:41.822 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 16:14:41.822 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 16:14:41.822 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 16:14:41.823 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 16:14:41.825 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 16:14:41.831 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:14:41.831 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 16:14:41.831 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 16:14:41.910 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 16:14:41.910 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 823 ms
+2022-04-30 16:14:42.309 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 16:14:42.397 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 16:14:42.409 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:14:42.422 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 16:14:42.430 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.78 seconds (JVM running for 2.592)
+2022-04-30 16:17:47.276 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 39944 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 16:17:47.277 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 16:17:47.308 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 16:17:47.309 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 16:17:48.028 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 16:17:48.029 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 16:17:48.029 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 16:17:48.029 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 16:17:48.029 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 16:17:48.032 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 16:17:48.038 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:17:48.038 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 16:17:48.038 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 16:17:48.116 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 16:17:48.116 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 807 ms
+2022-04-30 16:17:48.500 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 16:17:48.581 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 16:17:48.593 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:17:48.606 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 16:17:48.615 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.669 seconds (JVM running for 2.441)
+2022-04-30 16:24:14.000 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 36948 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 16:24:14.001 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 16:24:14.032 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 16:24:14.032 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 16:24:14.753 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 16:24:14.754 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 16:24:14.754 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 16:24:14.754 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 16:24:14.754 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 16:24:14.757 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 16:24:14.762 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:24:14.762 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 16:24:14.762 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 16:24:14.841 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 16:24:14.841 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 809 ms
+2022-04-30 16:24:15.221 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 16:24:15.303 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 16:24:15.315 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:24:15.328 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 16:24:15.336 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.671 seconds (JVM running for 2.421)
+2022-04-30 16:24:26.795 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 16:24:26.797 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 16:24:26.798 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 16:24:26.822 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 16:24:26.910 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 16:56:12.370 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 39672 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 16:56:12.371 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 16:56:12.400 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 16:56:12.401 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 16:56:13.131 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 16:56:13.132 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 16:56:13.132 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 16:56:13.132 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 16:56:13.132 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 16:56:13.135 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 16:56:13.140 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:56:13.141 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 16:56:13.141 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 16:56:13.221 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 16:56:13.221 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 820 ms
+2022-04-30 16:56:13.605 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 16:56:13.701 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 16:56:13.716 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:56:13.730 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 16:56:13.739 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.692 seconds (JVM running for 2.462)
+2022-04-30 16:56:18.166 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 16:56:18.167 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 16:56:18.168 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 16:56:18.188 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 16:56:18.287 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 16:57:30.872 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 3620 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 16:57:30.874 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 16:57:30.916 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 16:57:30.916 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 16:57:31.723 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 16:57:31.723 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 16:57:31.723 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 16:57:31.724 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 16:57:31.724 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 16:57:31.727 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 16:57:31.732 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:57:31.732 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 16:57:31.732 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 16:57:31.811 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 16:57:31.811 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 894 ms
+2022-04-30 16:57:32.224 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 16:57:32.307 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 16:57:32.319 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 16:57:32.333 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 16:57:32.341 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 1.826 seconds (JVM running for 2.8)
+2022-04-30 16:57:39.507 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 16:57:39.508 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 16:57:39.508 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-04-30 16:57:39.526 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 16:57:39.606 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 18:52:38.800 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 37476 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 18:52:38.827 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 18:52:38.863 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 18:52:38.863 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 18:52:39.950 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 18:52:39.953 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 18:52:39.954 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 18:52:39.954 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 18:52:39.954 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 18:52:39.968 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 18:52:39.976 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 18:52:39.977 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 18:52:39.977 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 18:52:40.064 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 18:52:40.064 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1200 ms
+2022-04-30 18:52:40.951 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 18:52:41.233 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 18:52:41.248 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 18:52:41.262 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 18:52:41.271 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 3.024 seconds (JVM running for 4.366)
+2022-04-30 18:52:51.988 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 18:52:51.989 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 18:52:51.990 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 1 ms
+2022-04-30 18:52:52.031 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 18:52:52.133 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 19:09:24.609 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Starting CommunityApplication using Java 11.0.5 on DESKTOP-USTD7I1 with PID 41940 (F:\javaProject\community\target\classes started by xiu in F:\javaProject\community)
+2022-04-30 19:09:24.611 [restartedMain] INFO  com.newcoder.community.CommunityApplication - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 19:09:24.644 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2022-04-30 19:09:24.644 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2022-04-30 19:09:25.531 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2022-04-30 19:09:25.532 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - An older version [1.2.25] of the Apache Tomcat Native library is installed, while Tomcat recommends a minimum version of [1.2.30]
+2022-04-30 19:09:25.532 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - Loaded Apache Tomcat Native library [1.2.25] using APR version [1.7.0].
+2022-04-30 19:09:25.532 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR capabilities: IPv6 [true], sendfile [true], accept filters [false], random [true], UDS [false].
+2022-04-30 19:09:25.532 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - APR/OpenSSL configuration: useAprConnector [false], useOpenSSL [true]
+2022-04-30 19:09:25.535 [restartedMain] INFO  org.apache.catalina.core.AprLifecycleListener - OpenSSL successfully initialized [OpenSSL 1.1.1g  21 Apr 2020]
+2022-04-30 19:09:25.541 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2022-04-30 19:09:25.542 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2022-04-30 19:09:25.542 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.60]
+2022-04-30 19:09:25.677 [restartedMain] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring embedded WebApplicationContext
+2022-04-30 19:09:25.678 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1033 ms
+2022-04-30 19:09:26.174 [restartedMain] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 19:09:26.316 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2022-04-30 19:09:26.328 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2022-04-30 19:09:26.341 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/community'
+2022-04-30 19:09:26.349 [restartedMain] INFO  com.newcoder.community.CommunityApplication - Started CommunityApplication in 2.126 seconds (JVM running for 2.987)
+2022-04-30 19:09:52.606 [http-nio-8080-exec-1] INFO  o.a.c.c.C.[Tomcat].[localhost].[/community] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2022-04-30 19:09:52.607 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2022-04-30 19:09:52.607 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 0 ms
+2022-04-30 19:09:52.621 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.FindLoginTicket].
+2022-04-30 19:09:52.633 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Starting...
+2022-04-30 19:09:52.715 [http-nio-8080-exec-1] INFO  com.zaxxer.hikari.HikariDataSource - HikariPool-1 - Start completed.
+2022-04-30 19:09:52.794 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.818 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.DiscussPostService.findDiscussPostRows].
+2022-04-30 19:09:52.862 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.DiscussPostService.findDiscussPost].
+2022-04-30 19:09:52.868 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.870 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.872 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.874 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.884 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.886 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.889 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.890 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.892 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:09:52.893 [http-nio-8080-exec-1] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:09:52],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:11:19.724 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.UserService.FindLoginTicket].
+2022-04-30 19:11:19.727 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:11:19.731 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.MessageService.findConversationCount].
+2022-04-30 19:11:19.806 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.MessageService.findConversations].
+2022-04-30 19:11:19.825 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.MessageService.findLetterUnreadCount].
+2022-04-30 19:11:19.827 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.MessageService.findLetterCount].
+2022-04-30 19:11:19.829 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.UserService.findUserById].
+2022-04-30 19:11:19.831 [http-nio-8080-exec-9] INFO  com.newcoder.community.aspect.ServiceLogAspect - 用户[0:0:0:0:0:0:0:1],在[2022-04-30 19:11:19],访问了[com.newcoder.community.service.MessageService.findLetterUnreadCount].
+2022-04-30 22:23:18.066 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 38112 (started by xiu in F:\javaProject\community)
+2022-04-30 22:23:18.084 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:23:18.764 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:23:18.768 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:23:18.787 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:23:20.767 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:23:21.120 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.53 seconds (JVM running for 4.723)
+2022-04-30 22:26:07.660 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 46440 (started by xiu in F:\javaProject\community)
+2022-04-30 22:26:07.661 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:26:08.257 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:26:08.260 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:26:08.285 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:26:10.388 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:26:10.821 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.606 seconds (JVM running for 4.487)
+2022-04-30 22:31:06.471 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 46956 (started by xiu in F:\javaProject\community)
+2022-04-30 22:31:06.473 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:31:07.082 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:31:07.085 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:31:07.105 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:31:08.934 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:31:09.266 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.246 seconds (JVM running for 4.274)
+2022-04-30 22:34:35.838 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 47488 (started by xiu in F:\javaProject\community)
+2022-04-30 22:34:35.839 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:34:36.404 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:34:36.407 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:34:36.429 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:34:38.369 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:34:38.726 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.293 seconds (JVM running for 4.173)
+2022-04-30 22:35:25.197 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 47676 (started by xiu in F:\javaProject\community)
+2022-04-30 22:35:25.202 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:35:25.857 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:35:25.861 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:35:25.884 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:35:28.207 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:35:28.629 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.89 seconds (JVM running for 4.876)
+2022-04-30 22:39:30.606 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 45928 (started by xiu in F:\javaProject\community)
+2022-04-30 22:39:30.607 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:39:31.189 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:39:31.191 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:39:31.213 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:39:33.057 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:39:33.401 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.175 seconds (JVM running for 4.184)
+2022-04-30 22:40:23.420 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 47544 (started by xiu in F:\javaProject\community)
+2022-04-30 22:40:23.421 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:40:23.999 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:40:24.002 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:40:24.022 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:40:26.054 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:40:26.411 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.424 seconds (JVM running for 4.336)
+2022-04-30 22:45:30.350 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 47580 (started by xiu in F:\javaProject\community)
+2022-04-30 22:45:30.352 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:45:30.971 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:45:30.973 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:45:30.992 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:45:32.842 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:45:33.273 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.498 seconds (JVM running for 4.592)
+2022-04-30 22:51:36.576 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 46372 (started by xiu in F:\javaProject\community)
+2022-04-30 22:51:36.577 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:51:37.201 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:51:37.203 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:51:37.222 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 8 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:51:39.181 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:51:39.526 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.38 seconds (JVM running for 4.345)
+2022-04-30 22:55:09.329 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 39996 (started by xiu in F:\javaProject\community)
+2022-04-30 22:55:09.331 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 22:55:09.904 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 22:55:09.907 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 22:55:09.927 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 22:55:11.729 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 22:55:12.070 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.167 seconds (JVM running for 4.168)
+2022-04-30 23:07:27.396 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 2196 (started by xiu in F:\javaProject\community)
+2022-04-30 23:07:27.397 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 23:07:27.985 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 23:07:27.987 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 23:07:28.009 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 23:07:29.839 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 23:07:30.189 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.241 seconds (JVM running for 4.17)
+2022-04-30 23:07:38.139 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 48580 (started by xiu in F:\javaProject\community)
+2022-04-30 23:07:38.140 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 23:07:38.722 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 23:07:38.724 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 23:07:38.745 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 23:07:40.593 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 23:07:40.930 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.198 seconds (JVM running for 4.103)
+2022-04-30 23:10:02.361 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 48388 (started by xiu in F:\javaProject\community)
+2022-04-30 23:10:02.362 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 23:10:02.946 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 23:10:02.949 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 23:10:02.970 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 23:10:04.867 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 23:10:05.207 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.427 seconds (JVM running for 4.494)
+2022-04-30 23:12:33.166 [main] INFO  com.newcoder.community.RedisTest - Starting RedisTest using Java 11.0.5 on DESKTOP-USTD7I1 with PID 49144 (started by xiu in F:\javaProject\community)
+2022-04-30 23:12:33.169 [main] INFO  com.newcoder.community.RedisTest - No active profile set, falling back to 1 default profile: "default"
+2022-04-30 23:12:33.769 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Multiple Spring Data modules found, entering strict repository configuration mode!
+2022-04-30 23:12:33.772 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data Redis repositories in DEFAULT mode.
+2022-04-30 23:12:33.792 [main] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 9 ms. Found 0 Redis repository interfaces.
+2022-04-30 23:12:35.755 [main] INFO  o.s.b.a.web.servlet.WelcomePageHandlerMapping - Adding welcome page template: index
+2022-04-30 23:12:36.114 [main] INFO  com.newcoder.community.RedisTest - Started RedisTest in 3.529 seconds (JVM running for 4.396)
