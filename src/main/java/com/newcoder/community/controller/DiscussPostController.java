@@ -6,7 +6,10 @@ import com.newcoder.community.service.*;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.HostHolder;
+import com.newcoder.community.util.RedisKeyUtil;
+import org.apache.kafka.common.protocol.types.Field;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -46,6 +49,14 @@ public class DiscussPostController implements CommunityConstant {
     @Autowired
     private EventProducer producer;  //触发消息队列生产者
 
+    @Autowired
+    private RedisTemplate redisTemplate;  // 向redis中存储相关的数据，计算得分
+    /*
+       影响帖子得分的行为都加了标记处理，一共有四个：
+       新增，加精，评论，点赞
+       利用Quartz做定时处理即可
+     */
+
     @RequestMapping(path="/addPost",method = RequestMethod.POST)
     @ResponseBody
     public String addPost(String title,String content){
@@ -69,6 +80,11 @@ public class DiscussPostController implements CommunityConstant {
                 .setEntityId(post.getId());
 
         producer.fireEvent(event);  //触发事件
+
+        //标记需要计算分数的帖子ID
+        String redisKey = RedisKeyUtil.getPostScoreKey();
+        //重复的情况，但是又只需要算一次，去重，只是记录哪些帖子需要进行存储而已,以下同理
+        redisTemplate.opsForSet().add(redisKey,post.getId());
 
         //报错之后会统一处理
         return CommunityUtil.getJSONString(0,"发布成功");
@@ -169,6 +185,63 @@ public class DiscussPostController implements CommunityConstant {
         return "/site/discuss-detail";
     }
 
-    //增加帖子回复功能
+    //--------------------------------------------------------------------------------------------------
+    //增加更新帖子逻辑,修改需要提交数据
+    //异步请求不刷新
+    //置顶
+    @RequestMapping(path = "/top" , method = RequestMethod.POST)
+    @ResponseBody
+    public String setTop(int id){
+        discussPostService.updateType(id,1);
+
+        //触发发帖子事件，将数据加入到es服务器上面，使得数据之后可以被搜索到
+        Event event = new Event()
+                .setTopic(TOPIC_PUBLISH)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        producer.fireEvent(event);  //触发事件
+
+        return CommunityUtil.getJSONString(0);
+    }
+
+    //加精
+    @RequestMapping(path = "/wonderful" , method = RequestMethod.POST)
+    @ResponseBody
+    public String setWonderful(int id){
+        discussPostService.updateStatus(id,1);
+
+        //触发发帖子事件，将数据加入到es服务器上面，使得数据之后可以被搜索到
+        Event event = new Event()
+                .setTopic(TOPIC_PUBLISH)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        producer.fireEvent(event);  //触发事件
+
+        //标记需要计算分数的帖子ID，置顶不需要标记
+        String redisKey = RedisKeyUtil.getPostScoreKey();
+        //重复的情况，但是又只需要算一次，去重，只是记录哪些帖子需要进行存储而已,以下同理
+        redisTemplate.opsForSet().add(redisKey,id);
+
+        return CommunityUtil.getJSONString(0);
+    }
+
+    //删除
+    @RequestMapping(path = "/delete" , method = RequestMethod.POST)
+    @ResponseBody
+    public String setDelete(int id){
+        discussPostService.updateStatus(id,2);  //帖子为2表示删除
+
+        //触发删除帖子事件，将数据加入到es服务器上面，使得数据之后可以被搜索到
+        Event event = new Event()
+                .setTopic(TOPIC_DELETE)
+                .setUserId(hostHolder.getUser().getId())
+                .setEntityType(ENTITY_TYPE_POST)
+                .setEntityId(id);
+        producer.fireEvent(event);  //触发事件
+        return CommunityUtil.getJSONString(0);
+    }
+
 
 }

@@ -17,6 +17,7 @@ import java.lang.reflect.Method;
  * @date 2022/4/26 16:11
  * 使用带有注解的拦截器
  * 这个目的是为了拦截一些页面，禁止没有登录就可以访问到必须要登录才可以访问的界面
+ * 这个在优化之后使用Spring Security优化了
  */
 @Component
 public class LoginRequiredInterceptor implements HandlerInterceptor {

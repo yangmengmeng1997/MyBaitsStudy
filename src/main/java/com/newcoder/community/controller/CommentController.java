@@ -8,7 +8,9 @@ import com.newcoder.community.service.CommentService;
 import com.newcoder.community.service.DiscussPostService;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.HostHolder;
+import com.newcoder.community.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -35,6 +37,9 @@ public class CommentController implements CommunityConstant {
 
     @Autowired
     private DiscussPostService discussPostService;  //为了查到帖子的用户id
+
+    @Autowired
+    private RedisTemplate redisTemplate;  //需要redis来计算帖子的得分状态
 
     @RequestMapping(path = "/add/{discussPostId}",method = RequestMethod.POST)
     public String addComment(@PathVariable("discussPostId") int discussPostId, Comment comment){
@@ -67,6 +72,11 @@ public class CommentController implements CommunityConstant {
                     .setEntityType(ENTITY_TYPE_POST)
                     .setEntityId(discussPostId);
              producer.fireEvent(event);  //再次触发事件
+
+            //标记需要计算分数的帖子ID   ，对帖子评论可以增加分数，但是对评论统计不需要增加
+            String redisKey = RedisKeyUtil.getPostScoreKey();
+            //重复的情况，但是又只需要算一次，去重，只是记录哪些帖子需要进行存储而已,以下同理
+            redisTemplate.opsForSet().add(redisKey,discussPostId);
         }
 
         return "redirect:/discuss/detail/"+ discussPostId;  //重定向回原来的页面

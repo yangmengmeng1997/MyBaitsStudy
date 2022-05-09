@@ -41,6 +41,7 @@ public interface CommunityConstant {
        点赞："like"
        关注："follow"
        发帖：“publish"
+       删帖：“delete”
        事件的主体均需要在kafka里面定义
      */
      String TOPIC_COMMENT = "comment";
@@ -48,6 +49,8 @@ public interface CommunityConstant {
      String TOPIC_FOLLOW = "follow";
 
      String TOPIC_PUBLISH = "publish";
+     String TOPIC_DELETE = "delete";
+
 
      /*
         系统用户的Id=1
@@ -58,9 +61,14 @@ public interface CommunityConstant {
         权限控制
         普通用户：user
         管理员：admin
-        版主：
+        版主：moderator
       */
      String AUTHORITY_USER = "user";
      String AUTHORITY_ADMIN = "admin";
      String AUTHORITY_MODERATOR = "moderator";
+
+     /*
+        分享主题名
+      */
+     String TOPIC_SHARE = "share";
  }

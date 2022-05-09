@@ -1,5 +1,7 @@
 package com.newcoder.community.util;
 
+import javax.print.DocFlavor;
+
 /**
  * @author xiuxiaoran
  * @date 2022/5/1 13:41
@@ -20,6 +22,11 @@ public class RedisKeyUtil {
     private static final String PREFIX_TICKET = "ticket";
 
     private static final String PREFIX_USER = "user";
+
+    private static final String PREFIX_UV = "uv";   //统计用户访问总数
+    private static final String PREFIX_DAU = "dau";  //统计用户日活跃量
+
+    private static final String PREFIX_POST = "post";  //帖子的算分相关
 
     //某个实体的key   like:entity:entityType:entityId   -> set<userId> 存储的是用户的ID
     public static String getEntityLikeKey(int entityType , int entityId){
@@ -58,5 +65,29 @@ public class RedisKeyUtil {
     //返回用户的key
     public static String getUserKey(int userId){
         return PREFIX_USER+SPLIT+userId;
+    }
+
+    //返回单日的uv
+    public static String getUVKey(String date){
+        return PREFIX_UV + SPLIT + date;
+    }
+
+    //区间UV
+    public static String getUVKey(String startTime,String endTime){
+        return PREFIX_UV+SPLIT+startTime+SPLIT+endTime;
+    }
+
+    //单日活跃用户
+    public static String getDAUKey(String date){
+        return PREFIX_DAU+SPLIT+date;
+    }
+    //区间活跃用户
+    public static String getDauKey(String startTime,String endTime){
+        return PREFIX_DAU+SPLIT+startTime+SPLIT+endTime;
+    }
+
+    //返回帖子得分
+    public static String getPostScoreKey(){
+        return PREFIX_POST+SPLIT+"score";
     }
 }

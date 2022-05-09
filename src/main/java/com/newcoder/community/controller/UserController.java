@@ -8,6 +8,8 @@ import com.newcoder.community.service.UserService;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.HostHolder;
+import com.qiniu.util.Auth;
+import com.qiniu.util.StringMap;
 import org.apache.commons.lang3.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -18,6 +20,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletResponse;
@@ -58,11 +61,57 @@ public class UserController implements CommunityConstant {
     @Autowired
     private FellowService fellowService;
 
+    //#######################上传头像相关的设置
+    @Value("${qiniu.key.access}")
+    private String accessKey;
+
+    @Value("${qiniu.key.secret}")
+    private String secretKey;
+
+    @Value("${qiniu.bucket.header.name}")
+    private String headerBucketKeyName;
+
+    @Value("${qiniu.bucket.header.url}")
+    private String headerBucketKeyUrl;
+    //########################################
+
     //访问账号设置页面 ，设置自定义标记，只有登录你才可以访问
+    //设置头像上传云服务器的相关的配置信息
     @LoginRequired
     @RequestMapping(path = "/setting" , method = RequestMethod.GET)
-    public String getSettingPage(){
+    public String getSettingPage(Model model){
+        //生成上传的凭证去操作云服务器
+
+        //1.生成文件名称
+        String fileName = CommunityUtil.generatedUUId();
+
+        //2.设置响应信息
+        StringMap policy = new StringMap();
+        policy.put("returnBody",CommunityUtil.getJSONString(0));
+
+        //生成上传凭证
+        Auth auth = Auth.create(accessKey,secretKey);
+        //生成上传凭证
+        String uploadToken = auth.uploadToken(headerBucketKeyName,fileName,3600,policy);
+        model.addAttribute("uploadToken",uploadToken);
+        model.addAttribute("fileName",fileName);
+
         return "/site/setting";
+    }
+
+    //更新头像路径到七牛云的服务器
+    //逻辑处理响应按钮在setting.js 中
+    @RequestMapping(path = "/header/url",method = RequestMethod.POST)
+    @ResponseBody
+    public String updateUrl(String fileName){
+        if(fileName==null){
+            return CommunityUtil.getJSONString(1,"文件名不能为空");
+        }
+        //服务器url
+        String url = headerBucketKeyUrl + "/" + fileName;
+        User user = hostHolder.getUser();
+        userService.updateHeader(user.getId(),url);
+        return CommunityUtil.getJSONString(0,"上传成功");  //成功
     }
 
     //**********************************************
@@ -104,7 +153,10 @@ public class UserController implements CommunityConstant {
     }
     //******************************************************
 
-    //更换头像 ，必须要登录
+    /*
+       废弃了，将图片上传到云服务器存储即可
+     */
+    //更换录头像 ，必须要登
     @LoginRequired
     @RequestMapping(path = "/upload",method = RequestMethod.POST)
     public String uploadHeader(MultipartFile headerImg, Model model){
@@ -144,6 +196,9 @@ public class UserController implements CommunityConstant {
     //借用response来返回图片信息
     //java IO流就是空白 类的上面已经有user路劲了，所以路劲这样写就可以了。
     //浏览器响应图片
+    /*
+       废弃，访问本地的图片，但是现在是存放在云服务器上面，所以也是废弃
+     */
     @RequestMapping(path = "/header/{fileName}", method = RequestMethod.GET)
     public void getHeader(@PathVariable("fileName") String fileName, HttpServletResponse response){
         //服务器存放的图片路径

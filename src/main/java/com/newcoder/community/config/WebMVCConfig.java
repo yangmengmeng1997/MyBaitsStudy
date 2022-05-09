@@ -1,9 +1,6 @@
 package com.newcoder.community.config;
 
-import com.newcoder.community.controller.interceptor.AlphaInterceptor;
-import com.newcoder.community.controller.interceptor.LoginRequiredInterceptor;
-import com.newcoder.community.controller.interceptor.LoginTicketInterceptor;
-import com.newcoder.community.controller.interceptor.MessageInterceptor;
+import com.newcoder.community.controller.interceptor.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -24,13 +21,16 @@ public class WebMVCConfig implements WebMvcConfigurer {
     private AlphaInterceptor alphaInterceptor;
 
     @Autowired
-    private LoginTicketInterceptor loginTicketInterceptor;    //废弃
+    private LoginTicketInterceptor loginTicketInterceptor;
 
-    @Autowired
-    private LoginRequiredInterceptor loginRequiredInterceptor;
+//    @Autowired
+//    private LoginRequiredInterceptor loginRequiredInterceptor;  //废弃
 
     @Autowired
     private MessageInterceptor messageInterceptor;
+
+    @Autowired
+    private DataInterceptor dataInterceptor;   //配置统计数据的拦截器
 
     @Override  //注册接口的方法实现
     public void addInterceptors(InterceptorRegistry registry) {
@@ -45,9 +45,11 @@ public class WebMVCConfig implements WebMvcConfigurer {
         registry.addInterceptor(loginTicketInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
 
         //排除拦截静态资源
-        registry.addInterceptor(loginRequiredInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
+        //registry.addInterceptor(loginRequiredInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
 
         //排除拦截静态资源
         registry.addInterceptor(messageInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
+
+        registry.addInterceptor(dataInterceptor).excludePathPatterns("/**/*.css","/**/*.js","/**/*.png","/**/*.jpg","/**/*.jpeg");
     }
 }

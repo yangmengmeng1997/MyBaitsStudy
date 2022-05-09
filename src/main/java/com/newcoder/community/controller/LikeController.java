@@ -7,7 +7,9 @@ import com.newcoder.community.service.LikeService;
 import com.newcoder.community.util.CommunityConstant;
 import com.newcoder.community.util.CommunityUtil;
 import com.newcoder.community.util.HostHolder;
+import com.newcoder.community.util.RedisKeyUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -31,6 +33,9 @@ public class LikeController implements CommunityConstant {
 
     @Autowired
     private EventProducer producer;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     //点赞传入一些信息进来，所以是post请求，异步请求，不转发刷新页面的
     //这里需要通过拦截器组织直接访问该页面的功能，你还记得吗？自己实现？，只有会使用SpringSecurite
@@ -70,6 +75,14 @@ public class LikeController implements CommunityConstant {
                     .setData("postId",postId);
             //构造好消息实体
             producer.fireEvent(event);  //系统发送消息通知
+        }
+
+        //判断对帖子点赞就加分
+        if(entityType==ENTITY_TYPE_POST){
+            //标记需要计算分数的帖子ID
+            String redisKey = RedisKeyUtil.getPostScoreKey();
+            //重复的情况，但是又只需要算一次，去重，只是记录哪些帖子需要进行存储而已,以下同理
+            redisTemplate.opsForSet().add(redisKey,postId);
         }
 
         //装换为json字符串给页面
