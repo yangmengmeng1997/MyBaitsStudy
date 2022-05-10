@@ -36,6 +36,14 @@ public class HomeController implements CommunityConstant {
     private LikeService likeService;
 
     /*
+      linux 下面请求转发一下
+     */
+    @RequestMapping(path = "/",method = RequestMethod.GET)
+    public String root(){
+        return "forward:/index";
+    }
+
+    /*
         获得首页，并且分页的相关功能进行封装，进行响应
         model: 是需要经行封装的数据
         page ： 与分页有关的数据都封装好为一个函数
